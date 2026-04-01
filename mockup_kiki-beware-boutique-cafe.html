@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiki Beware Boutique Cafe | George Street, Dunedin</title>
-    <meta name="description" content="Quirky boutique cafe on George Street serving Dunedin's best deconstructed Mexican iced coffee, loaded Holly fries, specialty coffee & Frenchie baguettes. Dine in or takeaway.">
+    <meta name="description" content="Boutique cafe on George Street serving signature deconstructed Mexican iced coffee, loaded Holly fries, specialty brews & Frenchie baguettes. Big flavours, quirky vibes.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -20,43 +20,43 @@
         }
 
         body {
+            font-family: 'Lato', sans-serif;
             background: #faf6f1;
             color: #2d2016;
-            font-family: 'Lato', sans-serif;
-            line-height: 1.7;
-            overflow-x: hidden;
+            line-height: 1.6;
         }
 
         h1, h2, h3, h4 {
             font-family: 'Playfair Display', serif;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
+            color: #2d2016;
+            line-height: 1.2;
         }
 
         /* Navigation */
         nav {
-            background: #faf6f1;
-            padding: 18px 24px;
             position: sticky;
             top: 0;
+            background: #faf6f1;
             z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
         }
 
         .nav-logo {
             font-family: 'Playfair Display', serif;
             color: #4a7c59;
-            font-size: clamp(1.4rem, 4vw, 1.6rem);
+            font-size: 1.6rem;
             letter-spacing: 0.05em;
             font-weight: 700;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -67,6 +67,7 @@
 
         .nav-links a {
             color: #2d2016;
+            text-decoration: none;
             font-weight: 600;
             font-size: 15px;
             transition: color 0.3s ease;
@@ -76,11 +77,45 @@
             color: #4a7c59;
         }
 
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #2d2016;
+            transition: 0.3s ease;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
-                gap: 20px;
-                width: 100%;
-                justify-content: center;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #faf6f1;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 0;
+                border-bottom: 1px solid #f0e8dc;
+            }
+
+            .hamburger {
+                display: flex;
             }
         }
 
@@ -92,46 +127,49 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
             padding: 40px 20px;
         }
 
         .hero-content {
             max-width: 800px;
+            color: white;
         }
 
         .hero h1 {
             font-size: clamp(48px, 8vw, 80px);
+            color: white;
             margin-bottom: 24px;
-            line-height: 1.1;
+            font-weight: 700;
         }
 
         .hero-headline {
             font-size: clamp(28px, 5vw, 42px);
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             color: #fff;
         }
 
         .hero-subheadline {
-            font-size: clamp(16px, 3vw, 20px);
+            font-size: clamp(16px, 2.5vw, 20px);
             margin-bottom: 32px;
             color: #f0e8dc;
-            line-height: 1.6;
+            font-weight: 300;
+            line-height: 1.7;
         }
 
         .hero-phone-label {
             font-size: 16px;
             color: #f0e8dc;
             margin-bottom: 8px;
-            display: block;
+            font-weight: 600;
         }
 
         .hero-phone {
             font-size: clamp(32px, 5vw, 56px);
             color: #4a7c59;
             font-weight: 700;
-            display: block;
+            text-decoration: none;
+            display: inline-block;
             margin-bottom: 32px;
             transition: color 0.3s ease;
         }
@@ -145,17 +183,17 @@
             background: #4a7c59;
             color: white;
             padding: 16px 40px;
+            text-decoration: none;
             border-radius: 6px;
             font-weight: 700;
             font-size: 18px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(74, 124, 89, 0.3);
         }
 
         .cta-button:hover {
             background: #3d6b4a;
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(74, 124, 89, 0.4);
+            box-shadow: 0 6px 20px rgba(74,124,89,0.4);
         }
 
         /* Trust Bar */
@@ -165,57 +203,64 @@
             border-top: 2px solid #4a7c59;
         }
 
-        .trust-items {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
+        .trust-container {
             max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
         }
 
         .trust-item {
             color: white;
-            font-weight: 600;
             font-size: 14px;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
         @media (max-width: 768px) {
-            .trust-items {
+            .trust-container {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr 1fr;
                 gap: 20px;
-                text-align: center;
             }
+        }
 
-            .trust-item {
-                justify-content: center;
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 48px 20px;
             }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 48px;
+            text-align: center;
+            color: #2d2016;
         }
 
         /* Services Section */
         .services {
             background: #f0e8dc;
-            padding: 80px 20px;
-        }
-
-        .section-heading {
-            text-align: center;
-            font-size: clamp(32px, 5vw, 48px);
-            color: #2d2016;
-            margin-bottom: 48px;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 24px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .service-card {
@@ -233,59 +278,58 @@
 
         .service-icon {
             font-size: 32px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            display: block;
         }
 
         .service-card h3 {
             color: #4a7c59;
-            font-size: 22px;
+            font-size: 24px;
             margin-bottom: 12px;
         }
 
         .service-card p {
             color: #7a6a5a;
-            font-size: 15px;
             margin-bottom: 16px;
+            font-size: 15px;
         }
 
         .service-link {
             color: #4a7c59;
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .service-link:hover {
+            text-decoration: underline;
         }
 
         /* About Section */
         .about {
             background: #faf6f1;
-            padding: 80px 20px;
         }
 
-        .about-container {
+        .about-content {
             max-width: 900px;
             margin: 0 auto;
-        }
-
-        .about h2 {
-            font-size: clamp(32px, 5vw, 48px);
-            color: #2d2016;
-            margin-bottom: 32px;
-            text-align: center;
         }
 
         .about p {
             font-size: 17px;
             margin-bottom: 24px;
+            color: #2d2016;
             line-height: 1.8;
         }
 
         .why-choose {
-            margin-top: 40px;
+            margin-top: 48px;
         }
 
         .why-choose h3 {
             font-size: 28px;
-            color: #4a7c59;
             margin-bottom: 24px;
+            color: #4a7c59;
         }
 
         .why-choose ul {
@@ -293,17 +337,16 @@
         }
 
         .why-choose li {
-            color: #2d2016;
             font-size: 16px;
             padding: 8px 0;
-            padding-left: 32px;
-            position: relative;
+            color: #2d2016;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
         }
 
         .why-choose li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
+            content: "✓";
             color: #4a7c59;
             font-weight: 700;
             font-size: 20px;
@@ -312,16 +355,15 @@
         /* Stats Strip */
         .stats {
             background: #4a7c59;
-            padding: 60px 20px;
+            padding: 48px 20px;
         }
 
         .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
-            align-items: center;
             gap: 60px;
-            max-width: 1000px;
-            margin: 0 auto;
             flex-wrap: wrap;
         }
 
@@ -329,11 +371,12 @@
             text-align: center;
         }
 
-        .stat-value {
-            font-size: 36px;
+        .stat-number {
             font-family: 'Playfair Display', serif;
+            font-size: 36px;
             font-weight: 700;
-            color: #fff;
+            color: white;
+            display: block;
             margin-bottom: 8px;
         }
 
@@ -346,22 +389,21 @@
         @media (max-width: 768px) {
             .stats-container {
                 flex-direction: column;
-                gap: 40px;
+                gap: 32px;
             }
         }
 
         /* Contact Section */
         .contact {
             background: #f0e8dc;
-            padding: 80px 20px;
         }
 
         .contact-container {
-            max-width: 1100px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
@@ -371,40 +413,65 @@
             }
         }
 
-        .contact h2 {
-            font-size: clamp(32px, 5vw, 48px);
-            color: #2d2016;
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 24px;
+            color: #4a7c59;
+        }
+
+        .contact-detail {
             margin-bottom: 24px;
         }
 
-        .contact-info p {
-            font-size: 16px;
-            margin-bottom: 16px;
+        .contact-detail strong {
+            display: block;
+            font-size: 14px;
+            color: #7a6a5a;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .contact-phone {
-            font-size: 28px;
+        .contact-detail a {
+            color: #2d2016;
+            text-decoration: none;
+            font-size: 20px;
             font-weight: 700;
-            color: #4a7c59;
-            display: block;
-            margin: 24px 0;
             transition: color 0.3s ease;
         }
 
-        .contact-phone:hover {
-            color: #3d6b4a;
+        .contact-detail a:hover {
+            color: #4a7c59;
         }
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .contact-detail p {
+            color: #2d2016;
+            font-size: 16px;
         }
 
-        .contact-form input,
-        .contact-form textarea {
+        /* Form Styles */
+        .contact-form h3 {
+            font-size: 28px;
+            margin-bottom: 24px;
+            color: #4a7c59;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2d2016;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
             background: #ffffff;
-            border: 1px solid #d0c4b3;
+            border: 1px solid #d0c4b0;
             color: #2d2016;
             padding: 12px 16px;
             border-radius: 6px;
@@ -414,33 +481,35 @@
             transition: all 0.3s ease;
         }
 
-        .contact-form input:focus,
-        .contact-form textarea:focus {
+        .form-group input:focus,
+        .form-group textarea:focus {
             border-color: #4a7c59;
             outline: none;
-            box-shadow: 0 0 0 2px rgba(74, 124, 89, 0.2);
+            box-shadow: 0 0 0 2px rgba(74,124,89,0.2);
         }
 
-        .contact-form textarea {
-            min-height: 140px;
+        .form-group textarea {
             resize: vertical;
+            min-height: 120px;
         }
 
         .submit-button {
             background: #4a7c59;
             color: white;
-            padding: 14px 32px;
+            padding: 14px 40px;
             border: none;
             border-radius: 6px;
             font-weight: 700;
             font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-family: 'Lato', sans-serif;
         }
 
         .submit-button:hover {
             background: #3d6b4a;
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74,124,89,0.3);
         }
 
         /* Footer */
@@ -451,177 +520,253 @@
             text-align: center;
         }
 
-        footer h3 {
-            font-size: 24px;
-            color: #4a7c59;
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #f0e8dc;
             margin-bottom: 16px;
         }
 
-        footer p {
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-
-        footer a {
+        .footer-phone {
             color: #4a7c59;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
             transition: color 0.3s ease;
         }
 
-        footer a:hover {
+        .footer-phone:hover {
             color: #3d6b4a;
         }
 
-        @media (max-width: 768px) {
-            .services, .about, .contact {
-                padding: 48px 20px;
-            }
-
-            .stats {
-                padding: 40px 20px;
-            }
+        .footer-copyright {
+            font-size: 14px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #2a2a2a;
         }
     </style>
 </head>
 <body>
+    <!-- DeliverWorks Banner -->
     <div style="background:#f97316;color:#000;text-align:center;padding:10px 20px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;position:relative;z-index:200">
         👋 Free mockup by <strong>DeliverWorks</strong> — Like what you see? Reply to our email or contact <a href="mailto:deliverworks.services@gmail.com" style="color:#000">deliverworks.services@gmail.com</a>
     </div>
 
+    <!-- Navigation -->
     <nav>
-        <div class="nav-logo">Kiki Beware Boutique Cafe</div>
-        <ul class="nav-links">
-            <li><a href="#services">Menu</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Kiki Beware</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Kiki Beware Boutique Cafe</h1>
-            <div class="hero-headline">Big Flavours. Bigger Personality. Central Dunedin.</div>
-            <div class="hero-subheadline">George Street's quirkiest boutique cafe — home of the legendary Mexican iced coffee and Holly fries that'll send you to another dimension.</div>
-            <span class="hero-phone-label">Call us:</span>
+            <div class="hero-headline">Big Flavours. Boutique Vibes. George Street.</div>
+            <p class="hero-subheadline">Home of the legendary deconstructed Mexican iced coffee and loaded Holly fries — Central Dunedin's quirky haven for specialty coffee and seriously good food.</p>
+            <div class="hero-phone-label">Call us:</div>
             <a href="tel:+6434774034" class="hero-phone">+64 3 477 4034</a>
+            <br>
             <a href="#contact" class="cta-button">Visit Us on George Street</a>
         </div>
     </section>
 
+    <!-- Trust Bar -->
     <div class="trust-bar">
-        <div class="trust-items">
-            <div class="trust-item">✓ Fresh Ingredients Daily</div>
-            <div class="trust-item">✓ Dine-in & Takeaway</div>
-            <div class="trust-item">✓ Dunedin Local Favourite</div>
-            <div class="trust-item">✓ Family Friendly</div>
+        <div class="trust-container">
+            <div class="trust-item">
+                <span>✓</span>
+                <span>Fresh Ingredients Daily</span>
+            </div>
+            <div class="trust-item">
+                <span>✓</span>
+                <span>Dine-in & Takeaway</span>
+            </div>
+            <div class="trust-item">
+                <span>✓</span>
+                <span>Dunedin Local Favourite</span>
+            </div>
+            <div class="trust-item">
+                <span>✓</span>
+                <span>Family Friendly</span>
+            </div>
         </div>
     </div>
 
+    <!-- Services Section -->
     <section id="services" class="services">
-        <h2 class="section-heading">What We're Famous For</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">☕</div>
-                <h3>Mexican Iced Coffee (Deconstructed)</h3>
-                <p>Our signature drink and the talk of Dunedin. Deconstructed, bold, and utterly addictive — this isn't your average iced coffee. People travel across the city just to try it, and they always come back for more.</p>
-                <a href="#contact" class="service-link">Served daily →</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🍳</div>
-                <h3>Holly Fries</h3>
-                <p>Loaded fries so good they've made customers zone out and forget their overdrafts. Crispy, indulgent, and piled high with flavour. These aren't just fries — they're a Kiki Beware experience, and they've got a cult following to prove it.</p>
-                <a href="#contact" class="service-link">Ask our team →</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🥐</div>
-                <h3>Specialty Coffee & Chai</h3>
-                <p>We take coffee seriously, but not ourselves. From smooth flat whites to a chai that'll warm you from the inside out, every cup is made with care and served with a smile in our quirky George Street corner.</p>
-                <a href="#contact" class="service-link">Brewed fresh daily →</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🫖</div>
-                <h3>Frenchie Baguette</h3>
-                <p>Fresh, packed with flavour, and perfect whether you're dining in at our recycled-door tables or grabbing takeaway. Vegetarian and meat options available — because everyone deserves great food, no matter what you're into.</p>
-                <a href="#contact" class="service-link">Order in-store →</a>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🍰</div>
-                <h3>Cabinet Food & Milkshakes</h3>
-                <p>Our cabinet is stocked daily with treats that pair perfectly with your coffee, and our milkshakes are thick, creamy, and made to order. Whether it's a quick snack or a full sit-down meal, we've got you covered.</p>
-                <a href="#contact" class="service-link">Check what's fresh →</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="about-container">
-            <h2>A Quirky George Street Icon</h2>
-            <p>Kiki Beware isn't your typical Dunedin cafe — and that's exactly how we like it. Tucked into George Street in the heart of Central Dunedin, we've built a loyal following around bold flavours, recycled-door tables, and an atmosphere that feels more like hanging out with mates than dining out. Ranked #96 of 332 restaurants in Dunedin on TripAdvisor with 254 reviews, we're proof that doing things differently works.</p>
-            <p>We're here for the coffee lovers, the fries fanatics, the vegans and the meat eaters, the students pulling all-nighters and the locals who just want a damn good feed. Our vibe is welcoming, our menu is unapologetically flavourful, and our team genuinely love what they do. Come as you are — quirks, cravings, and all.</p>
-            
-            <div class="why-choose">
-                <h3>Why Dunedin Loves Us</h3>
-                <ul>
-                    <li>Home of Dunedin's legendary deconstructed Mexican iced coffee — people cross town for it</li>
-                    <li>Holly fries with a cult following — seriously, read the reviews</li>
-                    <li>Quirky boutique personality with recycled-door tables and a vibe that keeps you coming back</li>
-                    <li>Vegetarian and meat options so everyone leaves happy</li>
-                    <li>Rated 4.5 stars with 254 reviews — a George Street favourite for a reason</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-value">254+</div>
-                <div class="stat-label">Reviews</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">Dunedin</div>
-                <div class="stat-label">Favourite</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">4.5★</div>
-                <div class="stat-label">Google Rated</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2>Visit Us Today</h2>
-                <p><strong>Address:</strong><br>George Street, Central Dunedin<br>Dunedin</p>
-                <a href="tel:+6434774034" class="contact-phone">+64 3 477 4034</a>
-                <p>Drop in for the best Mexican iced coffee and Holly fries in town. We're on George Street waiting for you.</p>
-                
-                <div style="background:#1a1a1a;border:1px solid #333;height:200px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#888;font-size:14px;margin-top:16px;text-align:center;padding:20px">
-                    <span style="font-size:24px;margin-bottom:8px">📍</span>
-                    <strong style="color:#ddd">Kiki Beware Boutique Cafe</strong>
-                    <span style="margin-top:4px">George Street, Central Dunedin, Dunedin</span>
-                    <small style="margin-top:10px;color:#666">Interactive map included in final build</small>
+        <div class="container">
+            <h2 class="section-heading">Our Menu</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">☕</span>
+                    <h3>Mexican Iced Coffee</h3>
+                    <p>Our signature deconstructed Mexican iced coffee isn't just a drink — it's an experience. Layered, bold, and completely addictive, this is the one that keeps people coming back and sending their friends our way.</p>
+                    <a href="#contact" class="service-link">Served daily →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🍳</span>
+                    <h3>Holly Fries</h3>
+                    <p>These aren't just loaded fries. They're the Holly fries — our signature creation that's earned cult status among regulars. Crispy, indulgent, and the kind of good that makes you zone out mid-bite.</p>
+                    <a href="#contact" class="service-link">Ask our team →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🥐</span>
+                    <h3>Specialty Coffee</h3>
+                    <p>We take our coffee seriously without taking ourselves too seriously. From flat whites to chai that hits different, every cup is crafted to make your day better — one sip at a time.</p>
+                    <a href="#contact" class="service-link">Brewed fresh →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🫖</span>
+                    <h3>Frenchie Baguette</h3>
+                    <p>Fresh, crusty, and loaded with flavour. Our Frenchie baguette comes with both vegetarian and meat options, so whether you're the vego or the meat lover in the relationship, we've got you sorted.</p>
+                    <a href="#contact" class="service-link">See our options →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🍰</span>
+                    <h3>Cabinet Food & Milkshakes</h3>
+                    <p>Swing by for a quick cabinet snack or go full indulgence with a thick, creamy milkshake. Everything's made to grab and go, or stay and savour at one of our recycled-door tables.</p>
+                    <a href="#contact" class="service-link">Fresh daily →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🥗</span>
+                    <h3>Dine In or Takeaway</h3>
+                    <p>Stay awhile in our quirky, welcoming space with its recycled-door tables and chilled-out vibe, or grab your coffee and Holly fries to go. Either way, you're getting the full Kiki Beware experience.</p>
+                    <a href="#contact" class="service-link">Visit us today →</a>
                 </div>
             </div>
-            
-            <div>
-                <h2>Get In Touch</h2>
-                <form class="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="tel" name="phone" placeholder="Your Phone">
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-heading">George Street's Quirky Boutique Cafe</h2>
+            <div class="about-content">
+                <p>Kiki Beware has carved out its own little corner of Central Dunedin with a vibe that's equal parts welcoming and wonderfully weird. Nestled on George Street, we're the spot with the recycled-door tables, the loyal regulars, and the kind of atmosphere that makes you want to linger just a little longer. Ranked #96 of 332 restaurants in Dunedin on TripAdvisor with 254 reviews, we've built a reputation on doing things our way — and people love us for it.</p>
+                <p>We're all about big flavours in a boutique setting. From our signature deconstructed Mexican iced coffee to our legendary Holly fries, everything we serve is crafted with care and a little bit of creative flair. Our team is chilled, our vibe is genuine, and whether you're a regular or a first-timer, you'll feel right at home the moment you walk through the door.</p>
+                
+                <div class="why-choose">
+                    <h3>Why Choose Kiki Beware</h3>
+                    <ul>
+                        <li>Home of the deconstructed Mexican iced coffee — our hero drink that's earned a cult following across Dunedin</li>
+                        <li>Quirky, welcoming atmosphere with recycled-door tables and a vibe that keeps people coming back</li>
+                        <li>Rated 4.5 stars with 254 reviews — a beloved George Street fixture with seriously loyal fans</li>
+                        <li>Something for everyone — vegetarian and meat options, takeaway and dine-in, coffee and indulgent treats</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Stats Strip -->
+    <div class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">254+</span>
+                <span class="stat-label">Reviews</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">4.5★</span>
+                <span class="stat-label">Google Rated</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Dunedin</span>
+                <span class="stat-label">Favourite</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-heading">Visit Us Today</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-detail">
+                        <strong>Phone</strong>
+                        <a href="tel:+6434774034">+64 3 477 4034</a>
+                    </div>
+                    <div class="contact-detail">
+                        <strong>Address</strong>
+                        <p>George Street<br>Central Dunedin<br>Dunedin</p>
+                    </div>
+                    <div style="background:#1a1a1a;border:1px solid #333;height:200px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#888;font-size:14px;margin-top:16px;text-align:center;padding:20px">
+                        <span style="font-size:24px;margin-bottom:8px">📍</span>
+                        <strong style="color:#ddd">Kiki Beware Boutique Cafe</strong>
+                        <span style="margin-top:4px">George Street, Central Dunedin, Dunedin</span>
+                        <small style="margin-top:10px;color:#666">Interactive map included in final build</small>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <h3>Kiki Beware Boutique Cafe</h3>
-        <p><a href="tel:+6434774034">+64 3 477 4034</a></p>
-        <p>George Street, Central Dunedin, Dunedin</p>
-        <p style="margin-top: 24px; font-size: 13px;">© 2026 Kiki Beware Boutique Cafe. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-name">Kiki Beware Boutique Cafe</div>
+            <a href="tel:+6434774034" class="footer-phone">+64 3 477 4034</a>
+            <div class="footer-copyright">
+                © 2026 Kiki Beware Boutique Cafe. All rights reserved.
+            </div>
+        </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

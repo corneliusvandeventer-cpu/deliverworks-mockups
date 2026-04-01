@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midnight Motors Hamilton | MTA Approved Mechanics</title>
-    <meta name="description" content="MTA approved mechanics in Hamilton East. Honest pricing, same-day repairs, WOF, servicing & diagnostics. Rodney and Jason — trusted by locals for years.">
+    <title>Midnight Motors Hamilton East | MTA Approved Mechanics</title>
+    <meta name="description" content="MTA approved workshop in Hamilton East. Rodney and Jason deliver honest repairs, fair pricing, and same-day service. Behind Z Station, Grey St. Call 07 856 8112.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -31,92 +31,48 @@
             line-height: 1.2;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* Sticky Navigation */
+        /* Navigation */
         nav {
             position: sticky;
             top: 0;
             background: #0d1b2a;
+            padding: 16px 20px;
             z-index: 100;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        .nav-container {
+        nav .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .nav-logo {
+        nav .logo {
             font-family: 'Cormorant Garamond', serif;
+            color: #c9a84c;
             font-size: 2rem;
             font-weight: 700;
-            color: #c9a84c;
             letter-spacing: 0.1em;
-            text-transform: uppercase;
+            text-decoration: none;
         }
 
-        .nav-links {
+        nav ul {
             display: flex;
             gap: 32px;
             list-style: none;
         }
 
-        .nav-links a {
+        nav a {
             color: #f0f0f0;
+            text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
-            font-size: 15px;
         }
 
-        .nav-links a:hover {
+        nav a:hover {
             color: #c9a84c;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #c9a84c;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .nav-logo {
-                font-size: 1.4rem;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: #142030;
-                flex-direction: column;
-                padding: 24px;
-                gap: 16px;
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: transform 0.3s ease, opacity 0.3s ease;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
         }
 
         /* Hero Section */
@@ -127,46 +83,45 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 48px 24px;
+            padding: 40px 20px;
         }
 
         .hero-content {
             max-width: 800px;
         }
 
-        .hero-business-name {
-            font-size: clamp(48px, 8vw, 80px);
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 80px);
             color: #c9a84c;
             margin-bottom: 24px;
-            font-weight: 700;
         }
 
-        .hero-headline {
-            font-size: clamp(28px, 5vw, 42px);
+        .hero h2 {
+            font-size: clamp(28px, 4vw, 42px);
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             color: #f0f0f0;
         }
 
-        .hero-subheadline {
-            font-size: clamp(16px, 3vw, 20px);
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
             color: #9aafbf;
             margin-bottom: 32px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .hero-phone-label {
             font-size: 16px;
             color: #9aafbf;
             margin-bottom: 8px;
-            font-weight: 500;
         }
 
         .hero-phone {
+            display: block;
             font-size: clamp(32px, 5vw, 56px);
             color: #c9a84c;
             font-weight: 700;
-            display: block;
+            text-decoration: none;
             margin-bottom: 32px;
             transition: color 0.3s ease;
         }
@@ -175,43 +130,43 @@
             color: #b8973b;
         }
 
-        .hero-cta {
+        .cta-button {
             display: inline-block;
             background: #c9a84c;
             color: #0d1b2a;
-            padding: 16px 48px;
-            font-size: 18px;
-            font-weight: 700;
+            padding: 16px 40px;
             border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
         }
 
-        .hero-cta:hover {
+        .cta-button:hover {
             background: #b8973b;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4);
+            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
         }
 
         /* Trust Bar */
         .trust-bar {
             background: #1a1a1a;
+            padding: 20px;
             border-top: 2px solid #c9a84c;
-            padding: 20px 24px;
         }
 
-        .trust-container {
+        .trust-bar .container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             gap: 40px;
-            flex-wrap: wrap;
         }
 
         .trust-item {
-            color: #fff;
+            color: white;
             font-size: 14px;
             font-weight: 600;
             display: flex;
@@ -219,30 +174,9 @@
             gap: 8px;
         }
 
-        .trust-item::before {
-            content: '✓';
-            color: #c9a84c;
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        @media (max-width: 768px) {
-            .trust-container {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
-            }
-        }
-
-        /* Section Styling */
+        /* Section Styles */
         section {
-            padding: 80px 24px;
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding: 48px 24px;
-            }
+            padding: 80px 20px;
         }
 
         .container {
@@ -250,7 +184,7 @@
             margin: 0 auto;
         }
 
-        .section-heading {
+        section h2 {
             font-size: clamp(36px, 5vw, 52px);
             color: #c9a84c;
             margin-bottom: 48px;
@@ -278,7 +212,7 @@
 
         .service-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.25);
         }
 
         .service-icon {
@@ -287,28 +221,24 @@
             display: block;
         }
 
-        .service-name {
+        .service-card h3 {
             font-size: 24px;
             color: #c9a84c;
             margin-bottom: 12px;
-            font-weight: 600;
         }
 
-        .service-description {
+        .service-card p {
             color: #9aafbf;
             font-size: 15px;
-            line-height: 1.6;
             margin-bottom: 16px;
+            line-height: 1.6;
         }
 
         .service-link {
             color: #c9a84c;
             font-size: 14px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            transition: color 0.3s ease;
+            text-decoration: none;
+            font-weight: 500;
         }
 
         .service-link:hover {
@@ -320,28 +250,26 @@
             background: #0d1b2a;
         }
 
-        .about-text {
+        .about-content {
             max-width: 900px;
-            margin: 0 auto 48px;
+            margin: 0 auto;
         }
 
-        .about-text p {
+        .about-content p {
             font-size: 17px;
-            line-height: 1.8;
-            color: #f0f0f0;
             margin-bottom: 24px;
+            color: #9aafbf;
+            line-height: 1.8;
         }
 
         .why-choose {
-            max-width: 800px;
-            margin: 48px auto 0;
+            margin-top: 48px;
         }
 
         .why-choose h3 {
             font-size: 32px;
             color: #c9a84c;
             margin-bottom: 24px;
-            text-align: center;
         }
 
         .why-choose ul {
@@ -358,7 +286,7 @@
         }
 
         .why-choose li::before {
-            content: '✓';
+            content: "✓";
             color: #c9a84c;
             font-weight: 700;
             font-size: 20px;
@@ -368,44 +296,36 @@
         /* Stats Strip */
         .stats-strip {
             background: #c9a84c;
-            padding: 48px 24px;
+            padding: 60px 20px;
         }
 
         .stats-container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            gap: 48px;
             flex-wrap: wrap;
+            gap: 40px;
         }
 
         .stat-item {
             text-align: center;
-            color: #0d1b2a;
         }
 
-        .stat-value {
+        .stat-number {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 36px;
+            font-size: 42px;
             font-weight: 700;
+            color: #0d1b2a;
             display: block;
             margin-bottom: 8px;
         }
 
         .stat-label {
             font-size: 14px;
+            color: #0d1b2a;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        @media (max-width: 768px) {
-            .stats-container {
-                flex-direction: column;
-                gap: 32px;
-            }
         }
 
         /* Contact Section */
@@ -416,15 +336,9 @@
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            max-width: 1000px;
+            gap: 60px;
+            max-width: 1100px;
             margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
         }
 
         .contact-info h3 {
@@ -433,52 +347,48 @@
             margin-bottom: 24px;
         }
 
-        .contact-detail {
-            margin-bottom: 24px;
+        .contact-info p {
+            margin-bottom: 16px;
+            color: #9aafbf;
         }
 
-        .contact-detail strong {
-            display: block;
+        .contact-info a {
             color: #c9a84c;
-            font-size: 14px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .contact-detail a {
-            color: #f0f0f0;
-            font-size: 18px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 24px;
+            display: block;
+            margin-bottom: 24px;
             transition: color 0.3s ease;
         }
 
-        .contact-detail a:hover {
-            color: #c9a84c;
+        .contact-info a:hover {
+            color: #b8973b;
         }
 
-        .contact-detail p {
-            color: #f0f0f0;
-            font-size: 16px;
+        .contact-info address {
+            font-style: normal;
+            color: #9aafbf;
+            line-height: 1.8;
         }
 
-        .contact-form h3 {
-            font-size: 28px;
-            color: #c9a84c;
-            margin-bottom: 24px;
+        /* Form Styles */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .form-group label {
-            display: block;
-            color: #c9a84c;
+            color: #f0f0f0;
+            font-weight: 500;
             font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
 
         .form-group input,
@@ -502,83 +412,116 @@
         }
 
         .form-group textarea {
+            min-height: 140px;
             resize: vertical;
-            min-height: 120px;
         }
 
-        .submit-btn {
+        .submit-button {
             background: #c9a84c;
             color: #0d1b2a;
-            padding: 14px 40px;
-            font-size: 16px;
-            font-weight: 700;
+            padding: 14px 32px;
             border: none;
             border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 100%;
+            font-family: 'DM Sans', sans-serif;
         }
 
-        .submit-btn:hover {
+        .submit-button:hover {
             background: #b8973b;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
         }
 
         /* Footer */
         footer {
             background: #0a0a0a;
             color: #9aafbf;
-            padding: 48px 24px 24px;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        .footer-content {
+        footer .container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .footer-business-name {
+        footer h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
             color: #c9a84c;
+            font-size: 28px;
             margin-bottom: 16px;
-            font-weight: 700;
         }
 
-        .footer-phone {
-            font-size: 20px;
+        footer a {
             color: #c9a84c;
-            margin-bottom: 24px;
-            display: inline-block;
-            transition: color 0.3s ease;
+            text-decoration: none;
+            font-weight: 600;
         }
 
-        .footer-phone:hover {
-            color: #b8973b;
-        }
-
-        .footer-copyright {
-            margin-top: 32px;
-            padding-top: 24px;
-            border-top: 1px solid #333;
+        footer p {
+            margin-top: 24px;
             font-size: 14px;
-            color: #666;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 48px 20px;
+            }
+
+            nav ul {
+                gap: 20px;
+                font-size: 14px;
+            }
+
+            nav .logo {
+                font-size: 1.5rem;
+            }
+
+            .trust-bar .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .trust-item {
+                font-size: 12px;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 12px;
+                font-size: 13px;
+            }
+
+            nav .logo {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- DeliverWorks Banner -->
     <div style="background:#f97316;color:#000;text-align:center;padding:10px 20px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;position:relative;z-index:200">
         👋 Free mockup by <strong>DeliverWorks</strong> — Like what you see? Reply to our email or contact <a href="mailto:deliverworks.services@gmail.com" style="color:#000">deliverworks.services@gmail.com</a>
     </div>
 
-    <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <div class="nav-logo">Midnight Motors</div>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">☰</button>
-            <ul class="nav-links" id="navLinks">
+        <div class="container">
+            <a href="#" class="logo">MIDNIGHT MOTORS</a>
+            <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -586,210 +529,181 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-business-name">Midnight Motors</h1>
-            <div class="hero-headline">Honest Mechanics. Hamilton East. MTA Approved.</div>
-            <p class="hero-subheadline">Fair pricing, same-day repairs, and straightforward service from Rodney and Jason behind the Z Station on Grey St.</p>
+            <h1>Midnight Motors</h1>
+            <h2>Honest Mechanics You Can Trust</h2>
+            <p>MTA approved workshop in Hamilton East where Rodney and Jason fix it right, price it fair, and get you back on the road fast.</p>
             <div class="hero-phone-label">Call us:</div>
             <a href="tel:078568112" class="hero-phone">07 856 8112</a>
-            <a href="#contact" class="hero-cta">Call 07 856 8112</a>
+            <a href="#contact" class="cta-button">Get In Touch</a>
         </div>
     </section>
 
-    <!-- Trust Bar -->
     <div class="trust-bar">
-        <div class="trust-container">
-            <div class="trust-item">Licensed & Registered</div>
-            <div class="trust-item">Professional Indemnity Insured</div>
-            <div class="trust-item">Hamilton Practice</div>
-            <div class="trust-item">Confidential & Discrete</div>
+        <div class="container">
+            <div class="trust-item">
+                <span>🛡</span>
+                <span>Licensed & Registered</span>
+            </div>
+            <div class="trust-item">
+                <span>✓</span>
+                <span>Professional Indemnity Insured</span>
+            </div>
+            <div class="trust-item">
+                <span>🛡</span>
+                <span>Hamilton Practice</span>
+            </div>
+            <div class="trust-item">
+                <span>✓</span>
+                <span>Confidential & Discrete</span>
+            </div>
         </div>
     </div>
 
-    <!-- Services Section -->
     <section id="services">
         <div class="container">
-            <h2 class="section-heading">Our Services</h2>
+            <h2>Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <span class="service-icon">📊</span>
-                    <h3 class="service-name">Warrant of Fitness (WOF)</h3>
-                    <p class="service-description">Get your WOF sorted at our MTA approved workshop in Hamilton East. We'll give you an honest assessment and if something needs fixing, we'll tell you straight — no upselling, no surprises.</p>
+                    <h3>Warrant of Fitness (WOF)</h3>
+                    <p>Get your WOF sorted at our MTA approved workshop on Grey St. Rodney and Jason check everything thoroughly and explain what needs doing — no surprises, just straight talk.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">⚖️</span>
-                    <h3 class="service-name">Car Servicing</h3>
-                    <p class="service-description">Regular servicing keeps your car running smoothly and saves you money in the long run. Rodney and Jason know what your vehicle needs and won't miss a thing — that's why families keep coming back.</p>
+                    <h3>Car Servicing</h3>
+                    <p>Regular servicing keeps your car running strong and saves you money down the track. We follow manufacturer specs and only recommend work that actually needs doing.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">💼</span>
-                    <h3 class="service-name">Mechanical Repairs</h3>
-                    <p class="service-description">From minor fixes to major work, we diagnose the problem and get it sorted properly. Our customers trust us because we explain what's wrong, quote fairly, and do the job right first time.</p>
+                    <h3>Mechanical Repairs</h3>
+                    <p>From minor fixes to major repairs, we diagnose the problem properly and give you honest advice. Fair pricing, quality work, and we stand behind what we do.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">📋</span>
-                    <h3 class="service-name">Brake Repairs</h3>
-                    <p class="service-description">Your brakes are too important to skimp on. We check, repair, and replace brake components with the care and precision you'd expect from mechanics who've built their reputation on honesty and quality work.</p>
+                    <h3>Brake Repairs</h3>
+                    <p>Brakes are safety — we don't compromise. Whether it's pads, discs, or lines, we'll sort your braking system and make sure you're stopping properly every time.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">🏛️</span>
-                    <h3 class="service-name">Headlight and Bulb Replacement</h3>
-                    <p class="service-description">Blown headlight before your WOF? We've got you sorted. Quick bulb and headlight replacements done on the spot — no fuss, no waiting around.</p>
+                    <h3>Headlight and Bulb Replacement</h3>
+                    <p>Failed a WOF on a headlight? We'll replace bulbs and get you sorted fast. Most headlight jobs done while you wait — no need to book days in advance.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">📈</span>
-                    <h3 class="service-name">Same-Day Repairs</h3>
-                    <p class="service-description">Need your car back today? We understand you've got places to be. Most repairs are turned around the same day — just give us a call and we'll let you know what's possible.</p>
+                    <h3>Same-Day Repairs</h3>
+                    <p>Need it fixed today? We do our best to get same-day repairs done when possible. Ring us early on 07 856 8112 and we'll see what we can do.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">📊</span>
-                    <h3 class="service-name">General Diagnostics</h3>
-                    <p class="service-description">Weird noise? Dashboard light on? We'll run a full diagnostic and explain exactly what's happening with your vehicle. No jargon, no runaround — just clear answers from experienced mechanics.</p>
+                    <h3>General Diagnostics</h3>
+                    <p>Warning light on? Strange noise? We'll run diagnostics and figure out what's actually wrong. No guessing, no upselling — just honest answers about what your car needs.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">⚖️</span>
-                    <h3 class="service-name">Vehicle Inspections</h3>
-                    <p class="service-description">Buying a used car? Get it inspected first. We'll give you an honest report on what you're looking at — the good, the bad, and what might cost you down the track.</p>
+                    <h3>Vehicle Inspections</h3>
+                    <p>Buying a used car? Bring it to us first. We'll give it a thorough inspection and tell you exactly what you're getting into — the good, the bad, and what'll need fixing.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-heading">Your Trusted Hamilton East Mechanics</h2>
-            <div class="about-text">
-                <p>You'll find us tucked behind the Z Station on the corner of Grey St and Naylor St in Hamilton East. Rodney and Jason run this MTA approved workshop the old-fashioned way — with honesty, fair pricing, and a genuine commitment to getting the job done right. Over the years, they've built a loyal following of customers who appreciate straightforward service without the sales pitch.</p>
-                <p>We're not here to upsell you or drag out jobs. We tell you what your car needs, give you a fair price, and often have you back on the road the same day. It's that simple approach that's earned us the trust of Hamilton families — many now bring their entire household's vehicles to us because they know we'll look after them.</p>
-            </div>
-            <div class="why-choose">
-                <h3>Why Choose Midnight Motors</h3>
-                <ul>
-                    <li>MTA approved workshop — you're in safe, qualified hands</li>
-                    <li>Same-day repairs on most jobs — we know you need your car</li>
-                    <li>Honest pricing with no hidden costs or surprise add-ons</li>
-                    <li>Rodney and Jason personally oversee every job — experienced mechanics you can trust</li>
-                    <li>Straight talk — we explain what's wrong and what it'll cost before we start</li>
-                    <li>Conveniently located behind the Z Station in Hamilton East</li>
-                    <li>Loyal customer base — families trust us with all their vehicles</li>
-                </ul>
+            <h2>Your Hamilton East Workshop Since Day One</h2>
+            <div class="about-content">
+                <p>Rodney and Jason run Midnight Motors from their MTA approved workshop behind the Z Station on the corner of Grey St and Naylor St in Hamilton East. Over the years, they've built a solid reputation doing what too many workshops don't — straight answers, fair prices, and repairs done properly the first time.</p>
+                <p>They're the kind of mechanics who take the time to explain what's wrong, show you the part if you want to see it, and only fix what actually needs fixing. That no-nonsense approach has earned them a loyal following, with customers bringing their whole families' cars here. Rodney never misses a thing, Jason gives great advice, and between them, they run one of the most honest workshops in Hamilton.</p>
+                <div class="why-choose">
+                    <h3>Why Choose Midnight Motors</h3>
+                    <ul>
+                        <li>MTA Approved Workshop — qualified, insured, and held to industry standards</li>
+                        <li>Honest pricing — customers say we're the 10% who won't rip you off</li>
+                        <li>Same-day repairs when possible — we know you need your car back fast</li>
+                        <li>Family-run workshop with decades of combined experience</li>
+                        <li>Behind Z Station on Grey St — easy to find, convenient location</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Strip -->
     <div class="stats-strip">
         <div class="stats-container">
             <div class="stat-item">
-                <span class="stat-value">66+</span>
+                <span class="stat-number">66+</span>
                 <span class="stat-label">Reviews</span>
             </div>
             <div class="stat-item">
-                <span class="stat-value">100+</span>
+                <span class="stat-number">100+</span>
                 <span class="stat-label">Clients Served</span>
             </div>
             <div class="stat-item">
-                <span class="stat-value">4.4★</span>
+                <span class="stat-number">4.4★</span>
                 <span class="stat-label">Google Rated</span>
             </div>
         </div>
     </div>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="section-heading">Get In Touch</h2>
+            <h2>Get In Touch</h2>
             <div class="contact-wrapper">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-detail">
-                        <strong>Phone</strong>
-                        <a href="tel:078568112">07 856 8112</a>
-                    </div>
-                    <div class="contact-detail">
-                        <strong>Address</strong>
-                        <p>116A Grey St<br>Hamilton East<br>Hamilton 3216</p>
-                    </div>
+                    <h3>Visit Our Workshop</h3>
+                    <a href="tel:078568112">07 856 8112</a>
+                    <address>
+                        <strong>Midnight Motors</strong><br>
+                        116A Grey St<br>
+                        Hamilton East<br>
+                        Hamilton 3216
+                    </address>
                     <div style="background:#1a1a1a;border:1px solid #333;height:200px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#888;font-size:14px;margin-top:16px;text-align:center;padding:20px">
                         <span style="font-size:24px;margin-bottom:8px">📍</span>
                         <strong style="color:#ddd">Midnight Motors</strong>
-                        <span style="margin-top:4px">116A Grey St, Hamilton East, Hamilton 3216, Hamilton</span>
+                        <span style="margin-top:4px">116A Grey St, Hamilton East, Hamilton 3216</span>
                         <small style="margin-top:10px;color:#666">Interactive map included in final build</small>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Send Us A Message</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
-                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-business-name">Midnight Motors</div>
-            <a href="tel:078568112" class="footer-phone">07 856 8112</a>
-            <p style="margin-top:16px;color:#9aafbf">116A Grey St, Hamilton East, Hamilton 3216</p>
-            <div class="footer-copyright">
-                © 2026 Midnight Motors. All rights reserved.
-            </div>
+        <div class="container">
+            <h3>Midnight Motors</h3>
+            <p><a href="tel:078568112">07 856 8112</a></p>
+            <p>116A Grey St, Hamilton East, Hamilton 3216</p>
+            <p>&copy; 2026 Midnight Motors. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuToggle.textContent = '☰';
-            });
-        });
-
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! We\'ll get back to you soon.');
-            e.target.reset();
-        });
-    </script>
 </body>
 </html>

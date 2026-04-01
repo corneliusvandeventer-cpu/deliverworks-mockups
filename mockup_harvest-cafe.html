@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvest Cafe Dunedin | Fresh Food & Coffee on George Street</title>
+    <meta name="description" content="Harvest Cafe on George Street — a Dunedin classic since day one. Fresh scones, legendary cheese rolls, perfect coffee. Mon-Fri 8:30am-3:30pm. Pop in today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #2d2016;
+            background: #faf6f1;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #faf6f1;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 700;
+            color: #4a7c59;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #2d2016;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #4a7c59;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #2d2016;
+            transition: 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #faf6f1;
+                flex-direction: column;
+                padding: 20px;
+                gap: 16px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&auto=format&fit=crop') center/cover no-repeat;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            margin-bottom: 24px;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: clamp(18px, 2.5vw, 22px);
+            margin-bottom: 32px;
+            line-height: 1.6;
+            color: #f0e8dc;
+        }
+
+        .phone-hero {
+            margin: 32px 0;
+        }
+
+        .phone-hero small {
+            display: block;
+            font-size: 16px;
+            color: #f0e8dc;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .phone-hero a {
+            font-size: clamp(32px, 5vw, 56px);
+            color: #4a7c59;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+
+        .phone-hero a:hover {
+            color: #3d6b4a;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #4a7c59;
+            color: white;
+            padding: 16px 40px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            margin-top: 16px;
+        }
+
+        .cta-button:hover {
+            background: #3d6b4a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 124, 89, 0.4);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: #1a1a1a;
+            padding: 20px;
+            border-top: 2px solid #4a7c59;
+        }
+
+        .trust-signals {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trust-signal {
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .trust-signal::before {
+            content: '✓';
+            color: #4a7c59;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .trust-signals {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* Services Section */
+        .services {
+            background: #f0e8dc;
+            padding: 80px 20px;
+        }
+
+        .section-heading {
+            font-size: clamp(36px, 5vw, 48px);
+            text-align: center;
+            margin-bottom: 48px;
+            color: #2d2016;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 28px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+        }
+
+        .service-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: #4a7c59;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #7a6a5a;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .service-link {
+            color: #4a7c59;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: #3d6b4a;
+        }
+
+        /* About Section */
+        .about {
+            background: #faf6f1;
+            padding: 80px 20px;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content h2 {
+            font-size: clamp(36px, 5vw, 48px);
+            margin-bottom: 32px;
+            color: #2d2016;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            color: #2d2016;
+        }
+
+        .why-choose {
+            margin-top: 48px;
+        }
+
+        .why-choose h3 {
+            font-size: 28px;
+            margin-bottom: 24px;
+            color: #4a7c59;
+        }
+
+        .why-choose ul {
+            list-style: none;
+        }
+
+        .why-choose li {
+            font-size: 16px;
+            padding: 8px 0;
+            color: #2d2016;
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+
+        .why-choose li::before {
+            content: '✓';
+            color: #4a7c59;
+            font-weight: 700;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Stats Strip */
+        .stats {
+            background: #4a7c59;
+            padding: 48px 20px;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                flex-direction: column;
+                gap: 32px;
+            }
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #f0e8dc;
+            padding: 80px 20px;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact h2 {
+            font-size: clamp(36px, 5vw, 48px);
+            margin-bottom: 48px;
+            color: #2d2016;
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: #4a7c59;
+        }
+
+        .contact-detail {
+            margin-bottom: 24px;
+        }
+
+        .contact-detail strong {
+            display: block;
+            font-size: 14px;
+            color: #7a6a5a;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-detail a {
+            color: #4a7c59;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .contact-detail a:hover {
+            color: #3d6b4a;
+        }
+
+        .contact-detail p {
+            font-size: 16px;
+            color: #2d2016;
+            line-height: 1.6;
+        }
+
+        .hours-list {
+            list-style: none;
+            font-size: 16px;
+            color: #2d2016;
+        }
+
+        .hours-list li {
+            padding: 4px 0;
+        }
+
+        .contact-form {
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2d2016;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d0c4b4;
+            border-radius: 6px;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color: #2d2016;
+            background: #faf6f1;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4a7c59;
+            box-shadow: 0 0 0 2px rgba(74, 124, 89, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 14px;
+            background: #4a7c59;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: #3d6b4a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 124, 89, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services {
+                padding: 48px 20px;
+            }
+
+            .about {
+                padding: 48px 20px;
+            }
+
+            .contact {
+                padding: 48px 20px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: #7a6a5a;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer h3 {
+            font-size: 28px;
+            color: #f0e8dc;
+            margin-bottom: 16px;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 8px 0;
+        }
+
+        footer a {
+            color: #4a7c59;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #3d6b4a;
+        }
+
+        .copyright {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #333;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <!-- DeliverWorks Banner -->
+    <div style="background:#f97316;color:#000;text-align:center;padding:10px 20px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;position:relative;z-index:200">
+        👋 Free mockup by <strong>DeliverWorks</strong> — Like what you see? Reply to our email or contact <a href="mailto:deliverworks.services@gmail.com" style="color:#000">deliverworks.services@gmail.com</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Harvest Cafe</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Harvest Cafe</h1>
+            <h2>A Kiwi Classic in Central Dunedin</h2>
+            <p>Fresh food, perfectly made coffee, and the warmest welcome on George Street — locals and visitors have been coming back for years.</p>
+            <div class="phone-hero">
+                <small>Call us:</small>
+                <a href="tel:034775700">03 477 5700</a>
+            </div>
+            <a href="#contact" class="cta-button">Visit Us Today</a>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-signals">
+            <div class="trust-signal">Fresh Ingredients Daily</div>
+            <div class="trust-signal">Dine-in & Takeaway</div>
+            <div class="trust-signal">Dunedin Local Favourite</div>
+            <div class="trust-signal">Family Friendly</div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-heading">What We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">☕</span>
+                    <h3>Breakfast</h3>
+                    <p>Start your morning right with fresh, hearty classics. Our salmon eggs benedict is a favourite, and everything's made to order with care.</p>
+                    <a href="#contact" class="service-link">Free quotes available →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🍳</span>
+                    <h3>Lunch</h3>
+                    <p>Real Kiwi lunch done properly — our pinwheel sandwiches are legendary, and the wedges are perfectly crispy every time. Fresh, filling, and worth the trip.</p>
+                    <a href="#contact" class="service-link">Free quotes available →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🥐</span>
+                    <h3>Espresso Coffee</h3>
+                    <p>Consistently brilliant coffee that keeps regulars coming back week after week. Every cup is carefully made — smooth, strong, exactly how you like it.</p>
+                    <a href="#contact" class="service-link">Free quotes available →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🫖</span>
+                    <h3>Iced Coffee</h3>
+                    <p>Perfect when the Dunedin sun's out. Our iced Americanos are smooth, refreshing, and made with the same care as every espresso we pour.</p>
+                    <a href="#contact" class="service-link">Free quotes available →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🍰</span>
+                    <h3>Scones Fresh from the Oven</h3>
+                    <p>Still warm, perfectly fluffy, and worth arriving early for. These scones are baked fresh throughout the day and disappear fast.</p>
+                    <a href="#contact" class="service-link">Free quotes available →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🥗</span>
+                    <h3>Lamingtons</h3>
+                    <p>Our lamingtons have a serious following — soft, perfectly coated, and absolutely delicious. Regulars know to grab one before they're gone.</p>
+                    <a href="#contact" class="service-link">Free quotes available →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">☕</span>
+                    <h3>Cheese Rolls</h3>
+                    <p>Shona makes the world's best cheese rolls — that's not us saying it, that's what people drive across town for. A must-try Dunedin staple done right.</p>
+                    <a href="#contact" class="service-link">Free quotes available →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🍳</span>
+                    <h3>Takeaway</h3>
+                    <p>Grab your favourites to go — coffee, scones, sandwiches, lamingtons. Everything travels well, and we'll have you sorted quickly.</p>
+                    <a href="#contact" class="service-link">Free quotes available →</a>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🥐</span>
+                    <h3>Dine In</h3>
+                    <p>Pull up a chair and stay awhile. Wheelchair accessible, warm atmosphere, and staff who remember your order — this is your spot in the city.</p>
+                    <a href="#contact" class="service-link">Free quotes available →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>Your Go-To Spot on George Street</h2>
+            <p>Harvest Cafe has been a fixture at 218 George Street for years, and it's the kind of place that feels like home the moment you walk in. Shona and the team have built something special here — a proper Kiwi cafe where the food is fresh, the coffee is consistently excellent, and every customer gets a genuine welcome. Regulars meet here weekly. Visitors make it a must-stop every time they're back in Dunedin. That says everything.</p>
+            <p>We believe good food doesn't need to be complicated — it just needs to be done right. Fresh scones straight from the oven, pinwheel sandwiches made daily, lamingtons that people rave about, and cheese rolls that have earned a loyal following. Add perfectly made coffee and a team that genuinely loves what they do, and you've got Harvest. We're proud to be part of the George Street community, and we can't wait to welcome you in.</p>
+            <div class="why-choose">
+                <h3>Why Choose Harvest Cafe</h3>
+                <ul>
+                    <li>Legendary cheese rolls — Shona's recipe brings people back from across the city and beyond</li>
+                    <li>Consistently excellent coffee — smooth, strong, and exactly how you like it</li>
+                    <li>Fresh scones baked throughout the day — still warm, perfectly fluffy, worth arriving early for</li>
+                    <li>Real Kiwi classics done right — pinwheel sandwiches, lamingtons, and salmon eggs benedict that regulars rave about</li>
+                    <li>Genuine welcome every time — staff who remember your order and make you feel at home</li>
+                    <li>Central George Street location — easy to find, wheelchair accessible, perfect for a quick coffee or leisurely lunch</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat">
+                <span class="stat-number">107+</span>
+                <span class="stat-label">Reviews</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">★ 4.3</span>
+                <span class="stat-label">Google Rated</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">Dunedin</span>
+                <span class="stat-label">Favourite</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Visit Us Today</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-detail">
+                        <strong>Phone</strong>
+                        <a href="tel:034775700">03 477 5700</a>
+                    </div>
+                    <div class="contact-detail">
+                        <strong>Address</strong>
+                        <p>218 George Street<br>Central Dunedin<br>Dunedin 9016</p>
+                    </div>
+                    <div class="contact-detail">
+                        <strong>Hours</strong>
+                        <ul class="hours-list">
+                            <li>Monday - Friday: 8:30am - 3:30pm</li>
+                            <li>Saturday: 9am - 3pm</li>
+                            <li>Sunday: Closed</li>
+                        </ul>
+                    </div>
+                    <div style="background:#1a1a1a;border:1px solid #333;height:200px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#888;font-size:14px;margin-top:16px;text-align:center;padding:20px">
+                        <span style="font-size:24px;margin-bottom:8px">📍</span>
+                        <strong style="color:#ddd">Harvest Cafe</strong>
+                        <span style="margin-top:4px">218 George Street, Central Dunedin, Dunedin 9016</span>
+                        <small style="margin-top:10px;color:#666">Interactive map included in final build</small>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Harvest Cafe</h3>
+            <p><a href="tel:034775700">03 477 5700</a></p>
+            <p>218 George Street, Central Dunedin, Dunedin 9016</p>
+            <p class="copyright">&copy; 2026 Harvest Cafe. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

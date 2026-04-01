@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Total Electrical Systems | Marine, Commercial & Residential NZ</title>
-    <meta name="description" content="Multi-disciplined electronic specialists across marine, commercial and residential sectors. Expert wiring, maintenance, installations and electrical certification throughout New Zealand.">
+    <meta name="description" content="Multi-disciplined electrical specialists across New Zealand. Expert marine, commercial and residential electronics with certified installations, maintenance and servicing.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: 'Bebas Neue', cursive;
             letter-spacing: 1px;
         }
 
@@ -43,32 +43,34 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid #333;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            border-bottom: 1px solid #222;
         }
 
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 20px;
+            padding-top: 16px;
+            padding-bottom: 16px;
         }
 
-        nav .logo {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 28px;
+        .logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(24px, 4vw, 32px);
             color: #f97316;
-            letter-spacing: 1.5px;
+            text-decoration: none;
+            letter-spacing: 2px;
         }
 
-        nav ul {
+        .nav-links {
             display: flex;
             list-style: none;
             gap: 32px;
             align-items: center;
         }
 
-        nav a {
+        .nav-links a {
             color: #f5f5f5;
             text-decoration: none;
             font-weight: 500;
@@ -76,23 +78,13 @@
             font-size: 15px;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             color: #f97316;
         }
 
         @media (max-width: 768px) {
-            nav ul {
-                gap: 20px;
-                overflow-x: auto;
-                white-space: nowrap;
-                padding-bottom: 4px;
-            }
-
-            nav .logo {
-                font-size: 22px;
-            }
-
-            nav a {
+            .nav-links {
+                gap: 16px;
                 font-size: 14px;
             }
         }
@@ -105,71 +97,68 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 48px 20px;
+            position: relative;
         }
 
         .hero-content {
             max-width: 800px;
-            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        .hero h1 {
+        .hero-title {
             font-size: clamp(48px, 8vw, 80px);
-            color: #f97316;
-            margin-bottom: 20px;
-            line-height: 1;
-        }
-
-        .hero h2 {
-            font-size: clamp(28px, 4vw, 42px);
             color: #f5f5f5;
-            font-weight: 700;
-            margin-bottom: 16px;
-            line-height: 1.2;
+            line-height: 1;
+            margin-bottom: 24px;
         }
 
-        .hero p {
-            font-size: clamp(16px, 2vw, 20px);
+        .hero-headline {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #f5f5f5;
+        }
+
+        .hero-subheadline {
+            font-size: clamp(16px, 2.5vw, 20px);
             color: #d4d4d4;
             margin-bottom: 32px;
-            font-weight: 400;
-        }
-
-        .hero-phone {
-            margin: 32px 0;
+            line-height: 1.6;
         }
 
         .hero-phone-label {
-            font-size: 16px;
-            color: #a3a3a3;
+            font-size: 14px;
+            color: #d4d4d4;
             margin-bottom: 8px;
-            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .hero-phone a {
+        .hero-phone {
             font-size: clamp(32px, 5vw, 56px);
             color: #f97316;
             font-weight: 700;
             text-decoration: none;
-            transition: color 0.3s ease;
             display: inline-block;
+            margin-bottom: 32px;
+            transition: color 0.3s ease;
         }
 
-        .hero-phone a:hover {
+        .hero-phone:hover {
             color: #ea6c0a;
         }
 
         .cta-button {
             display: inline-block;
             background: #f97316;
-            color: #ffffff;
-            padding: 16px 40px;
-            border-radius: 6px;
+            color: #fff;
+            padding: 16px 48px;
             text-decoration: none;
+            border-radius: 6px;
             font-weight: 700;
             font-size: 18px;
             transition: all 0.3s ease;
-            margin-top: 16px;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
         }
 
         .cta-button:hover {
@@ -181,59 +170,70 @@
         /* Trust Bar */
         .trust-bar {
             background: #1a1a1a;
-            padding: 32px 20px;
+            padding: 20px;
             border-top: 2px solid #f97316;
         }
 
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
+        .trust-signals {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
         }
 
-        .trust-item {
+        .trust-signal {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #f5f5f5;
             font-weight: 600;
             font-size: 14px;
-            color: #f5f5f5;
         }
 
-        .trust-item::before {
-            content: "✓";
+        .trust-signal::before {
+            content: '✓';
             color: #f97316;
-            margin-right: 8px;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 700;
         }
 
         @media (max-width: 768px) {
-            .trust-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .trust-signals {
                 gap: 20px;
+            }
+            .trust-signal {
+                font-size: 13px;
             }
         }
 
-        /* Services Section */
-        .services {
-            background: #1a1a1a;
-            padding: 80px 20px;
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 48px 0;
+            }
         }
 
         .section-heading {
-            font-size: clamp(36px, 5vw, 52px);
+            font-size: clamp(36px, 5vw, 54px);
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 48px;
             color: #f97316;
+        }
+
+        /* Services Section */
+        #services {
+            background: #1a1a1a;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 24px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .service-card {
@@ -242,37 +242,46 @@
             border-radius: 10px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .service-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
         }
 
         .service-icon {
             font-size: 32px;
-            margin-bottom: 16px;
-            display: block;
         }
 
-        .service-card h3 {
-            color: #f97316;
+        .service-name {
             font-size: 24px;
-            margin-bottom: 12px;
+            color: #f97316;
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 1px;
         }
 
-        .service-card p {
+        .service-description {
             color: #a3a3a3;
             font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
 
         .service-link {
             color: #f97316;
-            font-size: 14px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 14px;
             transition: color 0.3s ease;
         }
 
@@ -281,9 +290,8 @@
         }
 
         /* About Section */
-        .about {
+        #about {
             background: #111111;
-            padding: 80px 20px;
         }
 
         .about-content {
@@ -291,74 +299,65 @@
             margin: 0 auto;
         }
 
-        .about h2 {
-            font-size: clamp(36px, 5vw, 52px);
-            color: #f97316;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-
-        .about p {
+        .about-text {
             font-size: 17px;
             color: #d4d4d4;
             margin-bottom: 24px;
             line-height: 1.8;
         }
 
-        .why-choose {
-            margin-top: 48px;
-        }
-
-        .why-choose h3 {
-            font-size: 32px;
+        .why-choose-heading {
+            font-size: clamp(28px, 4vw, 38px);
             color: #f97316;
-            margin-bottom: 24px;
+            margin: 48px 0 24px;
+            text-align: center;
         }
 
-        .why-choose ul {
+        .why-choose-list {
             list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .why-choose li {
+        .why-choose-list li {
             color: #f5f5f5;
             font-size: 16px;
-            padding: 8px 0;
-            line-height: 1.6;
+            padding: 12px 0;
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            line-height: 1.7;
         }
 
-        .why-choose li::before {
-            content: "✓";
+        .why-choose-list li::before {
+            content: '⚡';
             color: #f97316;
-            font-weight: 700;
-            margin-right: 12px;
-            font-size: 18px;
+            font-size: 20px;
+            flex-shrink: 0;
         }
 
         /* Stats Strip */
-        .stats {
+        .stats-strip {
             background: #f97316;
             padding: 60px 20px;
         }
 
-        .stats-grid {
+        .stats-container {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 80px;
-            max-width: 1000px;
-            margin: 0 auto;
             flex-wrap: wrap;
         }
 
-        .stat-item {
+        .stat {
             text-align: center;
         }
 
         .stat-number {
-            font-family: 'Bebas Neue', sans-serif;
             font-size: 48px;
-            color: #000;
-            display: block;
+            font-family: 'Bebas Neue', cursive;
+            color: #fff;
             line-height: 1;
             margin-bottom: 8px;
         }
@@ -368,42 +367,29 @@
             color: #000;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
         @media (max-width: 768px) {
-            .stats {
-                padding: 48px 20px;
-            }
-
-            .stats-grid {
-                flex-direction: column;
-                gap: 32px;
+            .stats-container {
+                gap: 40px;
             }
         }
 
         /* Contact Section */
-        .contact {
+        #contact {
             background: #1a1a1a;
-            padding: 80px 20px;
-        }
-
-        .contact h2 {
-            font-size: clamp(36px, 5vw, 52px);
-            color: #f97316;
-            margin-bottom: 48px;
-            text-align: center;
         }
 
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        @media (max-width: 968px) {
+        @media (max-width: 768px) {
             .contact-wrapper {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -411,35 +397,51 @@
         }
 
         .contact-info h3 {
-            font-size: 28px;
+            font-size: 32px;
             color: #f97316;
             margin-bottom: 24px;
         }
 
-        .contact-info p {
-            font-size: 16px;
-            color: #d4d4d4;
-            margin-bottom: 16px;
+        .contact-detail {
+            margin-bottom: 24px;
         }
 
-        .contact-phone {
-            font-size: 32px;
+        .contact-detail-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #a3a3a3;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .contact-detail-value {
+            font-size: 20px;
+            color: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .contact-detail-value a {
             color: #f97316;
-            font-weight: 700;
             text-decoration: none;
-            display: inline-block;
-            margin: 16px 0;
             transition: color 0.3s ease;
         }
 
-        .contact-phone:hover {
+        .contact-detail-value a:hover {
             color: #ea6c0a;
         }
 
-        .contact-form {
-            background: #222222;
-            padding: 32px;
-            border-radius: 10px;
+        .contact-intro {
+            color: #d4d4d4;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        /* Form Styling */
+        .contact-form h3 {
+            font-size: 32px;
+            color: #f97316;
+            margin-bottom: 24px;
         }
 
         .form-group {
@@ -448,10 +450,10 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            color: #f5f5f5;
-            font-weight: 500;
+            color: #d4d4d4;
             font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
 
         .form-group input,
@@ -475,28 +477,27 @@
         }
 
         .form-group textarea {
-            min-height: 120px;
             resize: vertical;
+            min-height: 120px;
         }
 
         .submit-button {
             background: #f97316;
-            color: #ffffff;
-            padding: 14px 32px;
+            color: #fff;
+            padding: 14px 40px;
             border: none;
             border-radius: 6px;
             font-weight: 700;
             font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 100%;
             font-family: 'DM Sans', sans-serif;
+            width: 100%;
         }
 
         .submit-button:hover {
             background: #ea6c0a;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
         }
 
         /* Footer */
@@ -507,35 +508,36 @@
             text-align: center;
         }
 
-        footer .logo {
-            font-family: 'Bebas Neue', sans-serif;
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
             font-size: 32px;
             color: #f97316;
             margin-bottom: 16px;
-            letter-spacing: 1.5px;
         }
 
-        footer p {
+        .footer-text {
             font-size: 14px;
-            margin: 8px 0;
+            margin-bottom: 8px;
         }
 
-        footer a {
+        .footer-text a {
             color: #f97316;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-        footer a:hover {
+        .footer-text a:hover {
             color: #ea6c0a;
         }
 
-        @media (max-width: 768px) {
-            .services,
-            .about,
-            .contact {
-                padding: 48px 20px;
-            }
+        .copyright {
+            margin-top: 24px;
+            font-size: 13px;
+            color: #666;
         }
     </style>
 </head>
@@ -548,8 +550,8 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">Total Electrical Systems</div>
-            <ul>
+            <a href="#" class="logo">Total Electrical Systems</a>
+            <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -560,68 +562,79 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Total Electrical Systems Limited</h1>
-            <h2>Electronic Systems Done Right, First Time</h2>
-            <p>Multi-disciplined electronic specialists serving marine, commercial, and residential clients across New Zealand with proven expertise.</p>
+            <h1 class="hero-title">Total Electrical Systems Limited</h1>
+            <div class="hero-headline">Electronics Done Right Across New Zealand</div>
+            <p class="hero-subheadline">Multi-disciplined electrical specialists delivering certified marine, commercial and residential installations with years of proven experience.</p>
             <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
     </section>
 
     <!-- Trust Bar -->
     <div class="trust-bar">
-        <div class="trust-grid">
-            <div class="trust-item">Licensed & Certified</div>
-            <div class="trust-item">Same Day Response</div>
-            <div class="trust-item">New Zealand Local Business</div>
-            <div class="trust-item">Fully Insured</div>
+        <div class="trust-signals">
+            <div class="trust-signal">Licensed & Certified</div>
+            <div class="trust-signal">Same Day Response</div>
+            <div class="trust-signal">New Zealand Local Business</div>
+            <div class="trust-signal">Fully Insured</div>
         </div>
     </div>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services">
         <div class="container">
             <h2 class="section-heading">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <span class="service-icon">🔧</span>
-                    <h3>Marine Electronics</h3>
-                    <p>We specialise in marine electronic systems, from navigation equipment to communication installations. Whether you're fitting out a new vessel or upgrading existing systems, we deliver reliable marine solutions that stand up to New Zealand's coastal conditions.</p>
+                    <div class="service-header">
+                        <span class="service-icon">🔧</span>
+                        <h3 class="service-name">Marine Electronics</h3>
+                    </div>
+                    <p class="service-description">From navigation systems to onboard electrical installations, we specialise in the unique demands of marine environments. Our team understands the critical nature of reliable marine electronics and delivers systems built to perform on the water.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
+
                 <div class="service-card">
-                    <span class="service-icon">🛿</span>
-                    <h3>Commercial Electronics</h3>
-                    <p>Our commercial electronic services cover everything from system design to full installations for businesses across New Zealand. We handle complex commercial wiring, ongoing maintenance, and certification to keep your operations running without interruption.</p>
+                    <div class="service-header">
+                        <span class="service-icon">🏿</span>
+                        <h3 class="service-name">Commercial Electronics</h3>
+                    </div>
+                    <p class="service-description">We provide complete electrical solutions for commercial operations across New Zealand. From initial wiring to ongoing maintenance, we keep your business running with minimal downtime and maximum reliability.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
+
                 <div class="service-card">
-                    <span class="service-icon">🪜</span>
-                    <h3>Residential Electronics</h3>
-                    <p>We bring the same rigorous standards to residential projects as we do to commercial work. From home automation and entertainment systems to complete electronic wiring, we ensure your property is wired safely and efficiently.</p>
+                    <div class="service-header">
+                        <span class="service-icon">🪜</span>
+                        <h3 class="service-name">Residential Electronics</h3>
+                    </div>
+                    <p class="service-description">Your home deserves electrical systems that work flawlessly. We handle everything from new installations to upgrades and repairs, ensuring your property meets all safety standards with certified workmanship.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
+
                 <div class="service-card">
-                    <span class="service-icon">🏠</span>
-                    <h3>Electronic Wiring</h3>
-                    <p>Precision electronic wiring across all sectors is our foundation. Years of hands-on experience mean we get the technical details right every time, whether it's intricate marine installations or extensive commercial fit-outs.</p>
+                    <div class="service-header">
+                        <span class="service-icon">🏠</span>
+                        <h3 class="service-name">Electronic Wiring</h3>
+                    </div>
+                    <p class="service-description">Precision wiring is the foundation of every reliable electrical system. Our team delivers clean, compliant installations across marine, commercial and residential projects with attention to every connection.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
+
                 <div class="service-card">
-                    <span class="service-icon">⚡</span>
-                    <h3>Maintenance & Servicing</h3>
-                    <p>Regular maintenance keeps electronic systems reliable and compliant. We provide scheduled servicing and responsive maintenance for marine, commercial, and residential clients, preventing issues before they become costly problems.</p>
+                    <div class="service-header">
+                        <span class="service-icon">⚡</span>
+                        <h3 class="service-name">Maintenance & Servicing</h3>
+                    </div>
+                    <p class="service-description">Regular servicing prevents costly failures and extends system life. We maintain electronic systems across all sectors, identifying potential issues before they become problems and keeping your operations running smoothly.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
+
                 <div class="service-card">
-                    <span class="service-icon">🔩</span>
-                    <h3>Installations</h3>
-                    <p>From initial design through to final testing, we manage complete electronic installations across every sector we serve. Our multi-disciplined team handles projects of any scale with the same attention to detail and quality workmanship.</p>
-                    <a href="#contact" class="service-link">Free quotes available →</a>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">🔧</span>
-                    <h3>Electrical Certification</h3>
-                    <p>All our work meets New Zealand electrical standards and we provide full certification for your peace of mind. Whether it's compliance certification for commercial premises or safety certification for marine vessels, we ensure everything is documented and legally compliant.</p>
+                    <div class="service-header">
+                        <span class="service-icon">🔩</span>
+                        <h3 class="service-name">Electrical Certification</h3>
+                    </div>
+                    <p class="service-description">Every installation we complete meets New Zealand electrical standards. We provide full certification for all work, giving you documented proof of compliance and peace of mind that the job's done right.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
             </div>
@@ -629,56 +642,55 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-content">
-            <h2>Multi-Disciplined Electronic Specialists</h2>
-            <p>Total Electrical Systems Limited is built on years of hands-on experience across marine, commercial, and residential electronic work. We've developed expertise in all types of electronic systems because we've been in the field, solving real problems for New Zealand clients who demand reliable results.</p>
-            <p>What sets us apart is our multi-disciplined approach — we don't just specialise in one area. Whether you're running a commercial operation, maintaining a vessel, or upgrading your home, we bring the same rigorous standards and proven expertise to every project. We get it done right, and we stand behind our work.</p>
-            
-            <div class="why-choose">
-                <h3>Why Choose Us</h3>
-                <ul>
-                    <li>Proven expertise across marine, commercial, and residential sectors</li>
-                    <li>All work meets New Zealand electrical standards</li>
-                    <li>Full certification and compliance documentation</li>
-                    <li>Same day response to enquiries</li>
-                    <li>Licensed, certified, and fully insured</li>
-                    <li>Hands-on experience solving real-world electronic challenges</li>
-                    <li>Quality workmanship on every project, large or small</li>
+    <section id="about">
+        <div class="container">
+            <h2 class="section-heading">Electrical Specialists You Can Trust</h2>
+            <div class="about-content">
+                <p class="about-text">Total Electrical Systems Limited is a multi-disciplined electrical company serving clients across New Zealand. With years of hands-on experience in marine, commercial and residential sectors, we've built our reputation on delivering quality electronic work that stands the test of time.</p>
+                <p class="about-text">We're not a one-size-fits-all operation. Whether you're navigating the challenges of marine electrical systems, running a commercial facility, or upgrading your home, we bring the right expertise to every job. Our approach is straightforward: understand what you need, deliver it properly, and certify it to standard.</p>
+                
+                <h3 class="why-choose-heading">Why Choose Total Electrical Systems</h3>
+                <ul class="why-choose-list">
+                    <li>Multi-disciplined expertise across marine, commercial and residential sectors — one team, all solutions</li>
+                    <li>Years of proven experience in electronic installations, maintenance and servicing nationwide</li>
+                    <li>Full electrical certification provided with every job — compliant, documented, done right</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- Stats Strip -->
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-number">200+</span>
-                <span class="stat-label">Jobs Completed</span>
+    <div class="stats-strip">
+        <div class="stats-container">
+            <div class="stat">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Jobs Completed</div>
             </div>
-            <div class="stat-item">
-                <span class="stat-number">15 Years</span>
-                <span class="stat-label">Experience</span>
+            <div class="stat">
+                <div class="stat-number">15 Years</div>
+                <div class="stat-label">Experience</div>
             </div>
-            <div class="stat-item">
-                <span class="stat-number">5★</span>
-                <span class="stat-label">Google Rated</span>
+            <div class="stat">
+                <div class="stat-number">5★</div>
+                <div class="stat-label">Google Rated</div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
+            <h2 class="section-heading">Get in Touch</h2>
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p><strong>Total Electrical Systems Limited</strong></p>
-                    <p>Servicing all of New Zealand</p>
-                    <p>We provide multi-disciplined electronic services for marine, commercial, and residential clients nationwide.</p>
+                    <p class="contact-intro">Ready to get your electrical work sorted? Contact Total Electrical Systems and let's discuss what you need.</p>
                     
+                    <div class="contact-detail">
+                        <div class="contact-detail-label">Location</div>
+                        <div class="contact-detail-value">New Zealand</div>
+                    </div>
+
                     <div style="background:#1a1a1a;border:1px solid #333;height:200px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#888;font-size:14px;margin-top:16px;text-align:center;padding:20px">
                         <span style="font-size:24px;margin-bottom:8px">📍</span>
                         <strong style="color:#ddd">Total Electrical Systems Limited</strong>
@@ -688,6 +700,7 @@
                 </div>
 
                 <div class="contact-form">
+                    <h3>Send Us a Message</h3>
                     <form>
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -714,11 +727,11 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="logo">Total Electrical Systems</div>
-            <p>Multi-disciplined electronic specialists serving New Zealand</p>
-            <p>Marine • Commercial • Residential</p>
-            <p style="margin-top: 24px; color: #666; font-size: 13px;">&copy; 2026 Total Electrical Systems Limited. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-title">Total Electrical Systems Limited</div>
+            <p class="footer-text">Multi-disciplined electrical specialists across New Zealand</p>
+            <p class="footer-text">Licensed & Certified | Fully Insured</p>
+            <p class="copyright">© 2026 Total Electrical Systems Limited. All rights reserved.</p>
         </div>
     </footer>
 </body>

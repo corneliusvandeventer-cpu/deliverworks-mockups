@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midnight Motors Hamilton East | MTA Approved Mechanics</title>
-    <meta name="description" content="MTA approved workshop in Hamilton East. Rodney and Jason deliver honest repairs, fair pricing, and same-day service. Behind Z Station, Grey St. Call 07 856 8112.">
+    <title>Midnight Motors Hamilton | MTA Approved WOF & Repairs</title>
+    <meta name="description" content="Honest mechanics in Hamilton East. MTA approved WOF, servicing, brakes & same-day repairs. Rodney and Jason deliver fair pricing and straight-up service at 116A Grey St.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,69 +15,75 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'DM Sans', sans-serif;
-            background: #0d1b2a;
-            color: #f0f0f0;
+            background: #111111;
+            color: #f5f5f5;
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
             line-height: 1.2;
         }
 
         /* Navigation */
         nav {
+            background: #111111;
+            padding: 16px 0;
             position: sticky;
             top: 0;
-            background: #0d1b2a;
-            padding: 16px 20px;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
         }
 
-        nav .container {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        nav .logo {
-            font-family: 'Cormorant Garamond', serif;
-            color: #c9a84c;
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #f97316;
             font-size: 2rem;
-            font-weight: 700;
             letter-spacing: 0.1em;
             text-decoration: none;
         }
 
-        nav ul {
+        .nav-links {
             display: flex;
             gap: 32px;
             list-style: none;
         }
 
-        nav a {
-            color: #f0f0f0;
+        .nav-links a {
+            color: #f5f5f5;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: #c9a84c;
+        .nav-links a:hover {
+            color: #f97316;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #f97316;
+            font-size: 28px;
+            cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&auto=format&fit=crop') center/cover no-repeat;
             min-height: 80vh;
             display: flex;
             align-items: center;
@@ -91,8 +97,8 @@
         }
 
         .hero h1 {
-            font-size: clamp(48px, 7vw, 80px);
-            color: #c9a84c;
+            font-size: clamp(48px, 8vw, 80px);
+            color: #f97316;
             margin-bottom: 24px;
         }
 
@@ -100,26 +106,28 @@
             font-size: clamp(28px, 4vw, 42px);
             font-weight: 700;
             margin-bottom: 16px;
-            color: #f0f0f0;
+            color: #f5f5f5;
         }
 
         .hero p {
             font-size: clamp(16px, 2vw, 20px);
-            color: #9aafbf;
+            color: #a3a3a3;
             margin-bottom: 32px;
             line-height: 1.7;
         }
 
         .hero-phone-label {
-            font-size: 16px;
-            color: #9aafbf;
+            font-size: 14px;
+            color: #a3a3a3;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             margin-bottom: 8px;
         }
 
         .hero-phone {
             display: block;
             font-size: clamp(32px, 5vw, 56px);
-            color: #c9a84c;
+            color: #f97316;
             font-weight: 700;
             text-decoration: none;
             margin-bottom: 32px;
@@ -127,54 +135,61 @@
         }
 
         .hero-phone:hover {
-            color: #b8973b;
+            color: #ea6c0a;
         }
 
         .cta-button {
             display: inline-block;
-            background: #c9a84c;
-            color: #0d1b2a;
+            background: #f97316;
+            color: #fff;
             padding: 16px 40px;
-            border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
+            font-weight: 700;
+            border-radius: 6px;
             transition: all 0.3s ease;
+            font-size: 18px;
         }
 
         .cta-button:hover {
-            background: #b8973b;
+            background: #ea6c0a;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4);
         }
 
         /* Trust Bar */
         .trust-bar {
             background: #1a1a1a;
             padding: 20px;
-            border-top: 2px solid #c9a84c;
+            border-top: 2px solid #f97316;
         }
 
-        .trust-bar .container {
+        .trust-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             gap: 40px;
+            flex-wrap: wrap;
         }
 
         .trust-item {
-            color: white;
-            font-size: 14px;
-            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
+            color: #f5f5f5;
+            font-weight: 600;
+            font-size: 14px;
         }
 
-        /* Section Styles */
+        .trust-item::before {
+            content: '✓';
+            color: #f97316;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Sections */
         section {
             padding: 80px 20px;
         }
@@ -184,16 +199,16 @@
             margin: 0 auto;
         }
 
-        section h2 {
+        .section-heading {
             font-size: clamp(36px, 5vw, 52px);
-            color: #c9a84c;
+            color: #f97316;
             margin-bottom: 48px;
             text-align: center;
         }
 
         /* Services Section */
         #services {
-            background: #142030;
+            background: #1a1a1a;
         }
 
         .services-grid {
@@ -203,7 +218,7 @@
         }
 
         .service-card {
-            background: #1a2b3c;
+            background: #222222;
             padding: 28px;
             border-radius: 10px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.12);
@@ -212,42 +227,43 @@
 
         .service-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
         }
 
         .service-icon {
             font-size: 32px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             display: block;
         }
 
         .service-card h3 {
+            color: #f97316;
             font-size: 24px;
-            color: #c9a84c;
             margin-bottom: 12px;
         }
 
         .service-card p {
-            color: #9aafbf;
+            color: #a3a3a3;
             font-size: 15px;
             margin-bottom: 16px;
             line-height: 1.6;
         }
 
         .service-link {
-            color: #c9a84c;
+            color: #f97316;
             font-size: 14px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            display: inline-block;
         }
 
         .service-link:hover {
-            color: #b8973b;
+            color: #ea6c0a;
         }
 
         /* About Section */
         #about {
-            background: #0d1b2a;
+            background: #111111;
         }
 
         .about-content {
@@ -256,9 +272,9 @@
         }
 
         .about-content p {
-            font-size: 17px;
+            font-size: 18px;
+            color: #f5f5f5;
             margin-bottom: 24px;
-            color: #9aafbf;
             line-height: 1.8;
         }
 
@@ -268,7 +284,7 @@
 
         .why-choose h3 {
             font-size: 32px;
-            color: #c9a84c;
+            color: #f97316;
             margin-bottom: 24px;
         }
 
@@ -277,118 +293,122 @@
         }
 
         .why-choose li {
-            color: #f0f0f0;
             font-size: 16px;
+            color: #f5f5f5;
             padding: 8px 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
+            padding-left: 32px;
+            position: relative;
         }
 
         .why-choose li::before {
-            content: "✓";
-            color: #c9a84c;
+            content: '✓';
+            color: #f97316;
             font-weight: 700;
+            position: absolute;
+            left: 0;
             font-size: 20px;
-            flex-shrink: 0;
         }
 
         /* Stats Strip */
         .stats-strip {
-            background: #c9a84c;
-            padding: 60px 20px;
+            background: #f97316;
+            padding: 48px 20px;
         }
 
         .stats-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-around;
-            align-items: center;
+            justify-content: center;
+            gap: 80px;
             flex-wrap: wrap;
-            gap: 40px;
         }
 
-        .stat-item {
+        .stat {
             text-align: center;
         }
 
-        .stat-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 42px;
-            font-weight: 700;
-            color: #0d1b2a;
+        .stat-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+            color: #000;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .stat-label {
             font-size: 14px;
-            color: #0d1b2a;
+            color: #000;
             font-weight: 600;
         }
 
         /* Contact Section */
         #contact {
-            background: #142030;
+            background: #1a1a1a;
         }
 
-        .contact-wrapper {
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            max-width: 1100px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 48px;
+            margin-top: 48px;
         }
 
         .contact-info h3 {
             font-size: 28px;
-            color: #c9a84c;
+            color: #f97316;
             margin-bottom: 24px;
         }
 
-        .contact-info p {
-            margin-bottom: 16px;
-            color: #9aafbf;
+        .contact-item {
+            margin-bottom: 24px;
         }
 
-        .contact-info a {
-            color: #c9a84c;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 24px;
+        .contact-item strong {
             display: block;
-            margin-bottom: 24px;
+            color: #f97316;
+            margin-bottom: 8px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-item a {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
             transition: color 0.3s ease;
         }
 
-        .contact-info a:hover {
-            color: #b8973b;
+        .contact-item a:hover {
+            color: #f97316;
         }
 
-        .contact-info address {
-            font-style: normal;
-            color: #9aafbf;
-            line-height: 1.8;
+        .contact-item p {
+            color: #f5f5f5;
+            font-size: 16px;
         }
 
-        /* Form Styles */
+        /* Form */
         .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+            background: #222222;
+            padding: 32px;
+            border-radius: 10px;
         }
 
         .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
-            color: #f0f0f0;
-            font-weight: 500;
+            display: block;
+            color: #f97316;
+            margin-bottom: 8px;
+            font-weight: 600;
             font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .form-group input,
@@ -400,89 +420,106 @@
             border-radius: 6px;
             width: 100%;
             font-family: 'DM Sans', sans-serif;
-            font-size: 15px;
+            font-size: 16px;
             transition: all 0.3s ease;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
-            border-color: #c9a84c;
+            border-color: #f97316;
             outline: none;
-            box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.2);
+            box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
         }
 
         .form-group textarea {
-            min-height: 140px;
+            min-height: 120px;
             resize: vertical;
         }
 
         .submit-button {
-            background: #c9a84c;
-            color: #0d1b2a;
+            background: #f97316;
+            color: #fff;
             padding: 14px 32px;
             border: none;
             border-radius: 6px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
+            width: 100%;
             font-family: 'DM Sans', sans-serif;
         }
 
         .submit-button:hover {
-            background: #b8973b;
+            background: #ea6c0a;
             transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4);
         }
 
         /* Footer */
         footer {
             background: #0a0a0a;
-            color: #9aafbf;
             padding: 40px 20px;
             text-align: center;
-        }
-
-        footer .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            color: #a3a3a3;
         }
 
         footer h3 {
-            font-family: 'Cormorant Garamond', serif;
-            color: #c9a84c;
-            font-size: 28px;
+            font-size: 32px;
+            color: #f97316;
             margin-bottom: 16px;
         }
 
-        footer a {
-            color: #c9a84c;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
         footer p {
-            margin-top: 24px;
+            margin-bottom: 8px;
             font-size: 14px;
         }
 
-        /* Mobile Responsive */
+        footer a {
+            color: #a3a3a3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f97316;
+        }
+
+        /* Mobile Styles */
         @media (max-width: 768px) {
             section {
                 padding: 48px 20px;
             }
 
-            nav ul {
-                gap: 20px;
-                font-size: 14px;
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #111111;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             }
 
-            nav .logo {
-                font-size: 1.5rem;
+            .nav-links.active {
+                display: flex;
             }
 
-            .trust-bar .container {
+            .nav-links a {
+                padding: 12px 0;
+                border-bottom: 1px solid #222;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .trust-container {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 20px;
             }
 
@@ -490,220 +527,235 @@
                 font-size: 12px;
             }
 
-            .contact-wrapper {
-                grid-template-columns: 1fr;
+            .stats-container {
                 gap: 40px;
             }
 
-            .stats-container {
-                flex-direction: column;
-                gap: 32px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav ul {
-                gap: 12px;
-                font-size: 13px;
-            }
-
-            nav .logo {
-                font-size: 1.3rem;
+            .stat-value {
+                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- DeliverWorks Banner -->
     <div style="background:#f97316;color:#000;text-align:center;padding:10px 20px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;position:relative;z-index:200">
         👋 Free mockup by <strong>DeliverWorks</strong> — Like what you see? Reply to our email or contact <a href="mailto:deliverworks.services@gmail.com" style="color:#000">deliverworks.services@gmail.com</a>
     </div>
 
+    <!-- Navigation -->
     <nav>
-        <div class="container">
-            <a href="#" class="logo">MIDNIGHT MOTORS</a>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <div class="nav-container">
+            <a href="#" class="logo">Midnight Motors</a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Midnight Motors</h1>
-            <h2>Honest Mechanics You Can Trust</h2>
-            <p>MTA approved workshop in Hamilton East where Rodney and Jason fix it right, price it fair, and get you back on the road fast.</p>
+            <h2>Honest Mechanics. Same-Day Repairs. Hamilton East.</h2>
+            <p>MTA approved workshop behind the Z Station on Grey St — Rodney and Jason fix it right, no runaround, fair pricing every time.</p>
             <div class="hero-phone-label">Call us:</div>
             <a href="tel:078568112" class="hero-phone">07 856 8112</a>
-            <a href="#contact" class="cta-button">Get In Touch</a>
+            <a href="#contact" class="cta-button">Call 07 856 8112</a>
         </div>
     </section>
 
+    <!-- Trust Bar -->
     <div class="trust-bar">
-        <div class="container">
-            <div class="trust-item">
-                <span>🛡</span>
-                <span>Licensed & Registered</span>
-            </div>
-            <div class="trust-item">
-                <span>✓</span>
-                <span>Professional Indemnity Insured</span>
-            </div>
-            <div class="trust-item">
-                <span>🛡</span>
-                <span>Hamilton Practice</span>
-            </div>
-            <div class="trust-item">
-                <span>✓</span>
-                <span>Confidential & Discrete</span>
-            </div>
+        <div class="trust-container">
+            <div class="trust-item">Licensed & Certified</div>
+            <div class="trust-item">Same Day Response</div>
+            <div class="trust-item">Hamilton Local Business</div>
+            <div class="trust-item">Fully Insured</div>
         </div>
     </div>
 
+    <!-- Services Section -->
     <section id="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2 class="section-heading">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <span class="service-icon">📊</span>
+                    <span class="service-icon">🔧</span>
                     <h3>Warrant of Fitness (WOF)</h3>
-                    <p>Get your WOF sorted at our MTA approved workshop on Grey St. Rodney and Jason check everything thoroughly and explain what needs doing — no surprises, just straight talk.</p>
+                    <p>Get your WOF sorted at our MTA approved workshop on Grey St. We'll give it to you straight — if it passes, great; if not, we'll tell you exactly what needs doing and price it fairly.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
-                    <span class="service-icon">⚖️</span>
+                    <span class="service-icon">🛿</span>
                     <h3>Car Servicing</h3>
-                    <p>Regular servicing keeps your car running strong and saves you money down the track. We follow manufacturer specs and only recommend work that actually needs doing.</p>
+                    <p>Regular servicing that keeps your car running smoothly without the runaround. Rodney never misses anything out, and we only recommend work that actually needs doing — no upselling, just honest advice.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
-                    <span class="service-icon">💼</span>
+                    <span class="service-icon">🪜</span>
                     <h3>Mechanical Repairs</h3>
-                    <p>From minor fixes to major repairs, we diagnose the problem properly and give you honest advice. Fair pricing, quality work, and we stand behind what we do.</p>
+                    <p>From minor fixes to major mechanical work, we get the job done properly the first time. Our loyal customers trust us because we don't try to rip you off like most garages — fair pricing, quality work.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
-                    <span class="service-icon">📋</span>
+                    <span class="service-icon">🏠</span>
                     <h3>Brake Repairs</h3>
-                    <p>Brakes are safety — we don't compromise. Whether it's pads, discs, or lines, we'll sort your braking system and make sure you're stopping properly every time.</p>
+                    <p>Brake issues sorted fast and done right. We diagnose the real problem, fix what needs fixing, and get you back on the road safely without charging for work you don't need.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
-                    <span class="service-icon">🏛️</span>
+                    <span class="service-icon">⚡</span>
                     <h3>Headlight and Bulb Replacement</h3>
-                    <p>Failed a WOF on a headlight? We'll replace bulbs and get you sorted fast. Most headlight jobs done while you wait — no need to book days in advance.</p>
+                    <p>Quick headlight and bulb replacements to keep you legal and safe. We stock common bulbs and can usually sort it while you wait — no need to book days in advance.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
-                    <span class="service-icon">📈</span>
+                    <span class="service-icon">🔩</span>
                     <h3>Same-Day Repairs</h3>
-                    <p>Need it fixed today? We do our best to get same-day repairs done when possible. Ring us early on 07 856 8112 and we'll see what we can do.</p>
+                    <p>Need it fixed today? We do our best to turn jobs around fast without cutting corners. Many repairs done same-day — just give us a call and we'll see what we can do.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
-                    <span class="service-icon">📊</span>
+                    <span class="service-icon">🔧</span>
                     <h3>General Diagnostics</h3>
-                    <p>Warning light on? Strange noise? We'll run diagnostics and figure out what's actually wrong. No guessing, no upselling — just honest answers about what your car needs.</p>
+                    <p>Something not right with your car? We'll diagnose the issue properly using our experience and the right tools. Jason's great with advice and will talk you through what's going on in plain English.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
                 <div class="service-card">
-                    <span class="service-icon">⚖️</span>
+                    <span class="service-icon">🛿</span>
                     <h3>Vehicle Inspections</h3>
-                    <p>Buying a used car? Bring it to us first. We'll give it a thorough inspection and tell you exactly what you're getting into — the good, the bad, and what'll need fixing.</p>
+                    <p>Pre-purchase inspections and general vehicle checks to give you peace of mind. We'll tell you exactly what you're looking at — honest assessments you can trust before you buy.</p>
                     <a href="#contact" class="service-link">Free quotes available →</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2>Your Hamilton East Workshop Since Day One</h2>
+            <h2 class="section-heading">Your Hamilton East Mechanics Since Day One</h2>
             <div class="about-content">
-                <p>Rodney and Jason run Midnight Motors from their MTA approved workshop behind the Z Station on the corner of Grey St and Naylor St in Hamilton East. Over the years, they've built a solid reputation doing what too many workshops don't — straight answers, fair prices, and repairs done properly the first time.</p>
-                <p>They're the kind of mechanics who take the time to explain what's wrong, show you the part if you want to see it, and only fix what actually needs fixing. That no-nonsense approach has earned them a loyal following, with customers bringing their whole families' cars here. Rodney never misses a thing, Jason gives great advice, and between them, they run one of the most honest workshops in Hamilton.</p>
+                <p>Midnight Motors sits tucked behind the Z Station on the corner of Grey St and Naylor St in Hamilton East. Rodney and Jason have built this MTA approved workshop on one simple principle: tell people the truth, charge them fairly, and do the job properly. Over the years, that straightforward approach has earned them a loyal following of customers who are sick of being taken for a ride by other garages.</p>
+                <p>We're not fancy and we're not corporate — we're just two mechanics who love what we do and respect the people who trust us with their cars. Same-day repairs when we can manage it, honest diagnostics every time, and fair pricing that won't make you wince. That's how we've built a reputation strong enough that entire families now bring their cars to us.</p>
                 <div class="why-choose">
                     <h3>Why Choose Midnight Motors</h3>
                     <ul>
-                        <li>MTA Approved Workshop — qualified, insured, and held to industry standards</li>
-                        <li>Honest pricing — customers say we're the 10% who won't rip you off</li>
-                        <li>Same-day repairs when possible — we know you need your car back fast</li>
-                        <li>Family-run workshop with decades of combined experience</li>
-                        <li>Behind Z Station on Grey St — easy to find, convenient location</li>
+                        <li>MTA approved workshop — certified standards you can trust</li>
+                        <li>Rodney and Jason bring decades of combined mechanical experience</li>
+                        <li>Honest pricing with no hidden fees or surprise charges</li>
+                        <li>Same-day repairs available for most jobs</li>
+                        <li>Loyal customer base built on word-of-mouth recommendations</li>
+                        <li>Convenient location behind the Z Station on Grey St</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Stats Strip -->
     <div class="stats-strip">
         <div class="stats-container">
-            <div class="stat-item">
-                <span class="stat-number">66+</span>
+            <div class="stat">
+                <span class="stat-value">66+</span>
                 <span class="stat-label">Reviews</span>
             </div>
-            <div class="stat-item">
-                <span class="stat-number">100+</span>
-                <span class="stat-label">Clients Served</span>
+            <div class="stat">
+                <span class="stat-value">15</span>
+                <span class="stat-label">Years Experience</span>
             </div>
-            <div class="stat-item">
-                <span class="stat-number">4.4★</span>
+            <div class="stat">
+                <span class="stat-value">4.4★</span>
                 <span class="stat-label">Google Rated</span>
             </div>
         </div>
     </div>
 
+    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-wrapper">
+            <h2 class="section-heading">Get In Touch</h2>
+            <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Visit Our Workshop</h3>
-                    <a href="tel:078568112">07 856 8112</a>
-                    <address>
-                        <strong>Midnight Motors</strong><br>
-                        116A Grey St<br>
-                        Hamilton East<br>
-                        Hamilton 3216
-                    </address>
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <strong>Phone</strong>
+                        <a href="tel:078568112">07 856 8112</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Address</strong>
+                        <p>116A Grey St, Hamilton East<br>Hamilton 3216</p>
+                    </div>
                     <div style="background:#1a1a1a;border:1px solid #333;height:200px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#888;font-size:14px;margin-top:16px;text-align:center;padding:20px">
                         <span style="font-size:24px;margin-bottom:8px">📍</span>
                         <strong style="color:#ddd">Midnight Motors</strong>
-                        <span style="margin-top:4px">116A Grey St, Hamilton East, Hamilton 3216</span>
+                        <span style="margin-top:4px">116A Grey St, Hamilton East, Hamilton 3216, Hamilton</span>
                         <small style="margin-top:10px;color:#666">Interactive map included in final build</small>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <h3>Midnight Motors</h3>
             <p><a href="tel:078568112">07 856 8112</a></p>
             <p>116A Grey St, Hamilton East, Hamilton 3216</p>
-            <p>&copy; 2026 Midnight Motors. All rights reserved.</p>
+            <p style="margin-top:24px;color:#666;">&copy; 2026 Midnight Motors. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

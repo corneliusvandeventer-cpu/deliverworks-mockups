@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan James Hair Salon Christchurch | Balayage & Colour Experts</title>
+    <meta name="description" content="Award-winning colour specialists in St Albans, Christchurch. Balayage, curly hair care, extensions & event styling. 4.9★ rated. Book your consultation today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #0d1b2a;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: #0d1b2a;
+            padding: 16px 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            color: #c9a84c;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #c9a84c;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #c9a84c;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                max-width: 300px;
+                background: #142030;
+                flex-direction: column;
+                padding: 80px 32px 32px;
+                gap: 24px;
+                transition: right 0.3s ease;
+                box-shadow: -2px 0 12px rgba(0,0,0,0.5);
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&auto=format&fit=crop') center/cover no-repeat;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            color: #c9a84c;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: clamp(24px, 4vw, 36px);
+            color: #f0f0f0;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: #9aafbf;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .hero-phone {
+            margin: 32px 0;
+        }
+
+        .hero-phone small {
+            display: block;
+            font-size: 14px;
+            color: #9aafbf;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-phone a {
+            font-size: clamp(32px, 5vw, 56px);
+            color: #c9a84c;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .hero-phone a:hover {
+            color: #b8973b;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #c9a84c;
+            color: #0d1b2a;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            margin-top: 16px;
+        }
+
+        .cta-button:hover {
+            background: #b8973b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 168, 76, 0.3);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: #1a1a1a;
+            padding: 20px;
+            border-top: 2px solid #c9a84c;
+        }
+
+        .trust-signals {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trust-signal {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #f0f0f0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .trust-signal::before {
+            content: "✓";
+            color: #c9a84c;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .trust-signals {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 48px 0;
+            }
+        }
+
+        .section-title {
+            font-size: clamp(36px, 5vw, 48px);
+            color: #c9a84c;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        /* Services Section */
+        #services {
+            background: #142030;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .service-card {
+            background: #1a2b3c;
+            padding: 28px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.24);
+        }
+
+        .service-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .service-card h3 {
+            color: #c9a84c;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #9aafbf;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .service-link {
+            display: inline-block;
+            color: #c9a84c;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: #b8973b;
+        }
+
+        /* About Section */
+        #about {
+            background: #0d1b2a;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #f0f0f0;
+            margin-bottom: 24px;
+        }
+
+        .why-choose {
+            margin-top: 40px;
+        }
+
+        .why-choose h3 {
+            font-size: 32px;
+            color: #c9a84c;
+            margin-bottom: 24px;
+        }
+
+        .why-choose ul {
+            list-style: none;
+        }
+
+        .why-choose li {
+            color: #f0f0f0;
+            font-size: 16px;
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .why-choose li::before {
+            content: "★";
+            color: #c9a84c;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Stats Strip */
+        .stats-strip {
+            background: #c9a84c;
+            color: #0d1b2a;
+            padding: 48px 20px;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #142030;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            color: #c9a84c;
+            margin-bottom: 24px;
+        }
+
+        .contact-detail {
+            margin-bottom: 24px;
+        }
+
+        .contact-detail h4 {
+            font-size: 16px;
+            color: #c9a84c;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+        }
+
+        .contact-detail p,
+        .contact-detail a {
+            color: #f0f0f0;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-detail a:hover {
+            color: #c9a84c;
+        }
+
+        .contact-detail .phone-large {
+            font-size: 24px;
+            font-weight: 700;
+            color: #c9a84c;
+        }
+
+        .contact-form {
+            background: #1a2b3c;
+            padding: 32px;
+            border-radius: 10px;
+        }
+
+        .contact-form h3 {
+            font-size: 28px;
+            color: #c9a84c;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #f0f0f0;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: #2a2a2a;
+            border: 1px solid #333;
+            color: #f5f5f5;
+            padding: 12px 16px;
+            border-radius: 6px;
+            width: 100%;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #c9a84c;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: #c9a84c;
+            color: #0d1b2a;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: #b8973b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: #9aafbf;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer h3 {
+            color: #c9a84c;
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        footer p {
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            color: #9aafbf;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #c9a84c;
+        }
+
+        .hours-list {
+            list-style: none;
+            margin: 16px 0;
+        }
+
+        .hours-list li {
+            padding: 4px 0;
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- DeliverWorks Banner -->
+    <div style="background:#f97316;color:#000;text-align:center;padding:10px 20px;font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;position:relative;z-index:200">
+        👋 Free mockup by <strong>DeliverWorks</strong> — Like what you see? Reply to our email or contact <a href="mailto:deliverworks.services@gmail.com" style="color:#000">deliverworks.services@gmail.com</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Jordan James Hair Salon</a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul id="navMenu">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Jordan James Hair Salon</h1>
+            <h2>Where Colour Meets Confidence in Christchurch</h2>
+            <p>St Albans' vibrant hair salon specialising in balayage, curly hair styling, and making you feel like the main character.</p>
+            <div class="hero-phone">
+                <small>Call us:</small>
+                <a href="tel:+6432700050">+64 3 270 0050</a>
+            </div>
+            <a href="#contact" class="cta-button">Book Your Consultation</a>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-signals">
+            <div class="trust-signal">Licensed & Registered</div>
+            <div class="trust-signal">Professional Indemnity Insured</div>
+            <div class="trust-signal">Christchurch Practice</div>
+            <div class="trust-signal">Confidential & Discrete</div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Balayage</h3>
+                    <p>Jordan and the team are known across Christchurch for exceptional balayage work that grows out beautifully. We'll create dimension and depth that suits your lifestyle, not someone else's Pinterest board.</p>
+                    <a href="#contact" class="service-link">Book online →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚖️</div>
+                    <h3>Hair Colouring</h3>
+                    <p>From bold transformations to natural tones, our colour specialists work with your hair's health first. We've helped countless clients recover from salon damage while achieving the colour they've been dreaming of.</p>
+                    <a href="#contact" class="service-link">Book online →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Women's Haircuts</h3>
+                    <p>Precision cuts tailored to your face shape, hair texture, and how you actually style it at home. We listen, then create a cut that works with your life.</p>
+                    <a href="#contact" class="service-link">Book online →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Curly Hair Specialist</h3>
+                    <p>Finally, a Christchurch salon that truly gets curls. We work with your natural texture to bring out healthy, defined curls that you'll love styling — or leaving wild.</p>
+                    <a href="#contact" class="service-link">Book online →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏛️</div>
+                    <h3>Hair Extensions</h3>
+                    <p>Length, volume, or both — our extension services blend seamlessly with your natural hair. We'll match your texture and colour for results that look and feel like yours.</p>
+                    <a href="#contact" class="service-link">Book online →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Blow Dry and Styling</h3>
+                    <p>Whether it's a sleek finish or voluminous bounce, our blow dry bar delivers salon-perfect hair for your day or night out. Walk in, relax, leave feeling incredible.</p>
+                    <a href="#contact" class="service-link">Book online →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Festival and Event Styling</h3>
+                    <p>From Electric Avenue to your best friend's wedding, we're Christchurch's go-to for statement hair. Space buns, braids, glam curls, beachy waves — we bring the energy and skill for every occasion.</p>
+                    <a href="#contact" class="service-link">Book online →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚖️</div>
+                    <h3>Hair Braiding</h3>
+                    <p>Intricate braids, festival-ready styles, or protective braiding — our team creates looks that last and turn heads. Book in before your next big event or just because.</p>
+                    <a href="#contact" class="service-link">Book online →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Straightening</h3>
+                    <p>Smooth, sleek, and frizz-free. Our straightening treatments work with your hair type to deliver long-lasting results without the damage.</p>
+                    <a href="#contact" class="service-link">Book online →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Complimentary Hair Consultations</h3>
+                    <p>Not sure what you need? Start with a free consultation. We'll talk through your hair goals, assess your hair's health, and create a plan that actually works for you.</p>
+                    <a href="#contact" class="service-link">Book online →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Your St Albans Colour & Style Experts</h2>
+            <div class="about-content">
+                <p>Jordan James Hair Salon is the high-energy, personality-driven space owner Jordan built right here in St Albans, Christchurch. With 1,120 loyal followers on Facebook and a 4.9-star reputation across 120 Google reviews, this isn't your average salon — it's where the city's creatives, festival-goers, and everyday locals come to feel like themselves, only better. You'll find our team working with curly hair like they were born to do it, hand-painting balayage that grows out beautifully, and sending clients off to Electric Avenue with braids and buns that stop traffic.</p>
+                
+                <div class="why-choose">
+                    <h3>Why Choose Jordan James Hair Salon</h3>
+                    <ul>
+                        <li>Award-winning colour specialists with a 4.9-star Google rating and over 120 reviews from happy Christchurch clients</li>
+                        <li>True curly hair experts who understand your natural texture and how to work with it, not against it</li>
+                        <li>Balayage that grows out gracefully, meaning less maintenance and more time between appointments</li>
+                        <li>Festival and event styling that brings the creativity and energy you want for your big day</li>
+                        <li>Complimentary consultations so you walk in confident and leave even more so</li>
+                        <li>A vibrant St Albans location with free parking and a team that genuinely loves what they do</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <div class="stats-strip">
+        <div class="stats-container">
+            <div class="stat">
+                <span class="stat-number">120+</span>
+                <span class="stat-label">Reviews</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">100+</span>
+                <span class="stat-label">Clients Served</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">4.9★</span>
+                <span class="stat-label">Google Rated</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Book Your Consultation</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-detail">
+                        <h4>Phone</h4>
+                        <a href="tel:+6432700050" class="phone-large">+64 3 270 0050</a>
+                    </div>
+
+                    <div class="contact-detail">
+                        <h4>Address</h4>
+                        <p>148A Cranford Street<br>St Albans<br>Christchurch 8014</p>
+                    </div>
+
+                    <div class="contact-detail">
+                        <h4>Hours</h4>
+                        <ul class="hours-list">
+                            <li>Tuesday - Saturday: 10:00am - 5:00pm</li>
+                            <li>Monday & Sunday: Closed</li>
+                        </ul>
+                    </div>
+
+                    <div style="background:#1a1a1a;border:1px solid #333;height:200px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#888;font-size:14px;margin-top:16px;text-align:center;padding:20px">
+                        <span style="font-size:24px;margin-bottom:8px">📍</span>
+                        <strong style="color:#ddd">Jordan James Hair Salon</strong>
+                        <span style="margin-top:4px">148A Cranford Street, St Albans, Christchurch 8014, Christchurch</span>
+                        <small style="margin-top:10px;color:#666">Interactive map included in final build</small>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Jordan James Hair Salon</h3>
+            <p><a href="tel:+6432700050">+64 3 270 0050</a></p>
+            <p>148A Cranford Street, St Albans, Christchurch 8014</p>
+            <p style="margin-top: 24px; color: #666; font-size: 14px;">&copy; 2026 Jordan James Hair Salon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('navMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
